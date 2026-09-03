@@ -1,0 +1,30 @@
+/*
+* Remix Icon v4.2.0
+* https://remixicon.com
+* https://github.com/Remix-Design/RemixIcon
+*
+* Copyright RemixIcon.com
+* Released under the Apache License Version 2.0
+*
+* Date: 2024-02-25
+*/
+@font-face {
+  font-family: "remixicon";
+  src: url('/assets/fonts/remixicon-subset.woff2') format('woff2'); /* IE9*/
+  src: url('/assets/fonts/remixicon-subset.woff2?x=1708865856766#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("remixicon-subset.woff2?t=1708865856766") format("woff2"),
+  url("remixicon.woff?t=1708865856766") format("woff"),
+  url('remixicon.ttf?t=1708865856766') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('remixicon.svg?t=1708865856766#remixicon') format('svg'); /* iOS 4.1- */
+  font-display: swap;
+}
+
+[class^="ri-"], [class*=" ri-"] {
+  font-family: 'remixicon' !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="ri-"],[class*=" ri-"]{font-family:'remixicon'!important;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.ri-alarm-warning-line:before{content:"\ea1d"}.ri-arrow-right-line:before{content:"\ea6c"}.ri-arrow-right-s-line:before{content:"\ea6e"}.ri-arrow-right-up-line:before{content:"\ea70"}.ri-bank-card-fill:before{content:"\ea91"}.ri-bank-line:before{content:"\ea94"}.ri-building-2-line:before{content:"\eb09"}.ri-calendar-schedule-line:before{content:"\f3f3"}.ri-check-double-line:before{content:"\eb79"}.ri-checkbox-circle-fill:before{content:"\eb80"}.ri-close-line:before{content:"\eb99"}.ri-compass-3-line:before{content:"\ebbe"}.ri-door-lock-line:before{content:"\ec4a"}.ri-door-open-fill:before{content:"\ec4b"}.ri-door-open-line:before{content:"\ec4c"}.ri-drop-line:before{content:"\ec6a"}.ri-file-paper-2-line:before{content:"\ecf9"}.ri-file-shield-2-line:before{content:"\ed09"}.ri-flashlight-line:before{content:"\ed3d"}.ri-government-line:before{content:"\edd9"}.ri-hammer-fill:before{content:"\edee"}.ri-home-4-fill:before{content:"\ee1c"}.ri-layout-right-line:before{content:"\ee9b"}.ri-layout-row-line:before{content:"\ee9d"}.ri-links-line:before{content:"\eeb8"}.ri-map-pin-2-fill:before{content:"\ef09"}.ri-map-pin-line:before{content:"\ef14"}.ri-menu-line:before{content:"\ef3e"}.ri-money-dollar-circle-line:before{content:"\ef65"}.ri-percent-line:before{content:"\efe6"}.ri-phone-fill:before{content:"\efe9"}.ri-phone-line:before{content:"\efec"}.ri-price-tag-3-fill:before{content:"\f022"}.ri-road-map-line:before{content:"\f08e"}.ri-ruler-2-line:before{content:"\f0a1"}.ri-scales-3-line:before{content:"\f0b7"}.ri-shapes-line:before{content:"\f3db"}.ri-shield-check-fill:before{content:"\f0ff"}.ri-shield-check-line:before{content:"\f100"}.ri-shield-flash-fill:before{content:"\f104"}.ri-shield-flash-line:before{content:"\f105"}.ri-shield-keyhole-line:before{content:"\f107"}.ri-stack-line:before{content:"\f181"}.ri-sun-cloudy-line:before{content:"\f1bb"}.ri-sun-line:before{content:"\f1bf"}.ri-temp-cold-line:before{content:"\f1f2"}.ri-time-line:before{content:"\f20f"}.ri-user-heart-line:before{content:"\f263"}.ri-user-search-line:before{content:"\f26c"}.ri-verified-badge-fill:before{content:"\f3e8"}.ri-volume-down-line:before{content:"\f29c"}.ri-wallet-3-line:before{content:"\f2ac"}.ri-window-2-fill:before{content:"\f2c3"}.ri-windy-line:before{content:"\f2ca"}

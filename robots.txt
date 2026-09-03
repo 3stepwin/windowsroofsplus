@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+
+# AI crawlers welcome
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://windowsroofsplus.com/sitemap.xml
