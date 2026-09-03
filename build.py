@@ -325,8 +325,8 @@ def build_roofing():
         faq_ld(faqs)]
 
     html = head(
-      f"Roofing Contractor Broward County FL | Repair &amp; Replacement | {BIZ}",
-      f"Licensed Florida roofing contractor ({LIC}) in Margate. Shingle, tile, metal and flat roof repair and replacement across Broward, Miami-Dade and Palm Beach. Free estimates, financing available. Call {PHONE}.",
+      "Roofing Contractor Broward County FL | Repair &amp; Replacement",
+      f"Licensed Florida roofing contractor in Margate. Shingle, tile, metal and flat roof repair and replacement across Broward County. Free estimates. {PHONE}.",
       path,
       "roofing contractor Broward County, roof replacement Fort Lauderdale, tile roof Margate FL, metal roofing South Florida, flat roof repair Broward, roof leak repair Coral Springs",
       ld, og_title=f"Roofing — Repair, Replacement &amp; New Construction | {BIZ}")
@@ -406,8 +406,8 @@ def build_windows():
         faq_ld(faqs)]
 
     html = head(
-      f"Impact Windows Broward County FL | Hurricane Windows | {BIZ}",
-      f"Florida-made hurricane impact windows installed factory direct across Broward, Miami-Dade and Palm Beach. Single-hung, slider, casement and architectural shapes. Insurance credits, energy savings, financing. Call {PHONE}.",
+      "Impact Windows Broward County FL | Hurricane-Rated Glass",
+      f"Florida-made hurricane impact windows installed factory direct across Broward County. Single-hung, slider, casement and custom shapes. Free estimate: {PHONE}.",
       path,
       "impact windows Broward County, hurricane windows Fort Lauderdale, impact windows Coral Springs, single hung impact window Margate, hurricane impact glass South Florida, impact window financing PACE",
       ld, og_title=f"Impact Windows — Florida-Made, Factory Direct | {BIZ}")
@@ -495,8 +495,8 @@ def build_doors():
         faq_ld(faqs)]
 
     html = head(
-      f"Impact Doors Broward County FL | Sliding Glass &amp; French | {BIZ}",
-      f"Hurricane-rated impact doors across Broward, Miami-Dade and Palm Beach — sliding glass, French and entry doors, Florida-made and installed factory direct. Free estimates and financing. Call {PHONE}.",
+      "Impact Doors Broward County FL | Sliding, French &amp; Entry",
+      f"Hurricane-rated impact doors across Broward County — sliding glass, French and entry, Florida-made and factory direct. Free estimates. Call {PHONE}.",
       path,
       "impact doors Broward County, impact sliding glass doors Fort Lauderdale, hurricane French doors South Florida, impact entry door Margate FL, impact door installation Coral Springs",
       ld, og_title=f"Impact Doors — Sliding Glass, French &amp; Entry | {BIZ}")
@@ -559,8 +559,8 @@ def build_financing():
     ]
     ld = [biz_ld(path), faq_ld(faqs)]
     html = head(
-      f"Roof &amp; Impact Window Financing in Florida | PACE &amp; Conventional | {BIZ}",
-      f"PACE, conventional and credit-flexible financing for roofing, impact windows and impact doors across South Florida. $0 down for qualified applicants, terms up to 20 years. Call {PHONE}.",
+      "Roof &amp; Impact Window Financing FL | PACE &amp; Conventional",
+      f"PACE, conventional and credit-flexible financing for roofing and impact windows in South Florida. $0 down for qualified applicants. Call {PHONE}.",
       path,
       "PACE financing Florida roof, impact window financing Broward, roof financing no money down Florida, PACE roofing Broward County, hurricane window financing bad credit Florida",
       ld, og_title=f"Financing — PACE, Conventional &amp; Credit-Flexible | {BIZ}")
@@ -626,8 +626,8 @@ def build_areas():
 
     ld = [biz_ld(path, {"areaServed": [{"@type": "City", "name": n + ", FL"} for n, _ in CITIES]})]
     html = head(
-      f"Service Areas | Roofing &amp; Impact Windows Across Broward County | {BIZ}",
-      f"{BIZ} serves all of Broward County plus Miami-Dade and Palm Beach — Fort Lauderdale, Coral Springs, Pompano Beach, Hollywood, Pembroke Pines and more. Free estimates. Call {PHONE}.",
+      "Service Areas | Broward, Miami-Dade &amp; Palm Beach FL",
+      f"Windows Roofs Plus serves all of Broward plus Miami-Dade and Palm Beach — Fort Lauderdale, Coral Springs, Pompano Beach, Hollywood and more. {PHONE}.",
       path,
       "roofing contractor Broward County service area, impact windows Fort Lauderdale, impact windows Coral Springs, roofer Pompano Beach, impact doors Hollywood FL",
       ld)
