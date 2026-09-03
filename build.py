@@ -63,7 +63,7 @@ NAV = f'''
 <div class="nav-wrap">
   <nav class="nav">
     <a href="/" class="nav-logo" aria-label="{BIZ} home">
-      <img src="/assets/brand/wrp-nav.png" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="880" height="330">
+      <img src="/assets/brand/wrp-nav.webp" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="640" height="240">
     </a>
     <div class="nav-links">
       <a href="/services/roofing.html">Roofing</a>
@@ -176,7 +176,7 @@ FOOTER = f'''
     <div class="glass" style="padding:clamp(28px,4vw,52px)">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo"><img src="/assets/brand/wrp-nav.png" alt="{BIZ}" width="880" height="330"></div>
+          <div class="footer-logo"><img src="/assets/brand/wrp-nav.webp" alt="{BIZ}" width="640" height="240"></div>
           <p style="font-size:14.5px;font-weight:300;max-width:320px">Licensed South Florida roofing and impact window contractor. Protect · Enhance · Add Value — built for Florida.</p>
           <p style="font-size:12.5px;color:var(--muted);margin-top:14px">FL Certified Roofing Contractor <strong style="color:var(--chrome-2)">{LIC}</strong><br>BBB Accredited · A+ Rating</p>
         </div>
