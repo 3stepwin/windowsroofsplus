@@ -47,7 +47,7 @@ def head(title, desc, path, keywords="", extra_ld=None, og_title=None):
 <meta name="twitter:image" content="{DOMAIN}/assets/brand/wrp-social-share.jpg">
 <link rel="icon" href="/assets/brand/wrp-icon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
-<link rel="preload" href="/assets/fonts/BarlowCondensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/InstrumentSerif-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/Barlow-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/fonts/remixicon-subset.css">
@@ -55,15 +55,13 @@ def head(title, desc, path, keywords="", extra_ld=None, og_title=None):
 {ld}
 </head>
 <body>
-<div class="bg-fx"></div>
-<div class="bg-grid"></div>
 '''
 
 NAV = f'''
 <div class="nav-wrap">
   <nav class="nav">
     <a href="/" class="nav-logo" aria-label="{BIZ} home">
-      <img src="/assets/brand/wrp-nav.webp" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="640" height="240">
+      <img src="/assets/brand/wrp-nav.webp" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="640" height="279">
     </a>
     <div class="nav-links">
       <a href="/services/roofing.html">Roofing</a>
@@ -81,7 +79,7 @@ NAV = f'''
     <a href="/services/impact-doors.html">Impact Doors</a>
     <a href="/financing.html">Financing</a>
     <a href="/service-areas.html">Service Areas</a>
-    <a href="tel:{TEL}" style="color:var(--violet)"><i class="ri-phone-fill"></i> {PHONE}</a>
+    <a href="tel:{TEL}" style="color:var(--violet-500)"><i class="ri-phone-fill"></i> {PHONE}</a>
   </div>
 </div>
 '''
@@ -94,17 +92,17 @@ def page_hero(eyebrow, h1_chrome, h1_violet, lead, crumbs=None):
             for t, u in crumbs)
         bc = f'<nav aria-label="Breadcrumb" style="font-size:13px;margin-bottom:22px">{items}</nav>'
     return f'''
-<header class="hero" style="padding-top:clamp(130px,15vw,180px);padding-bottom:clamp(46px,6vw,76px);text-align:left">
+<header class="page-hero">
   <div class="container">
     {bc}
     <span class="eyebrow blur-in">{eyebrow}</span>
-    <h1 class="h-display blur-in" style="animation-delay:.12s;margin-top:20px;font-size:clamp(2.3rem,5.4vw,4.2rem)">
-      <span class="chrome">{h1_chrome}</span><br><span class="violet-text">{h1_violet}</span>
+    <h1 class="h-display blur-in" style="animation-delay:.12s;margin-top:20px">
+      {h1_chrome}<br><span class="violet-text">{h1_violet}</span>
     </h1>
     <p class="lead blur-in" style="animation-delay:.26s;max-width:720px;margin-top:22px">{lead}</p>
-    <div class="hero-cta blur-in" style="animation-delay:.38s;justify-content:flex-start">
+    <div class="hero-cta blur-in" style="animation-delay:.38s">
       <a href="#estimate" class="btn btn-primary btn-lg">Free Estimate <i class="ri-arrow-right-up-line"></i></a>
-      <a href="tel:{TEL}" class="btn btn-ghost btn-lg"><i class="ri-phone-fill"></i> {PHONE}</a>
+      <a href="tel:{TEL}" class="btn btn-ghost btn-lg"><i class="ri-phone-line" style="color:var(--violet-500)"></i>{PHONE}</a>
     </div>
   </div>
 </header>
@@ -121,7 +119,7 @@ def faq_block(title, pairs):
       <span class="eyebrow reveal">Straight Answers</span>
       <h2 class="h-display reveal"><span class="chrome">{title}</span></h2>
     </div>
-    <div class="faq glass reveal" style="padding:clamp(20px,3vw,36px)">{rows}</div>
+    <div class="faq glass round-2xl reveal" style="padding:clamp(20px,3vw,36px)">{rows}</div>
   </div>
 </section>
 '''
@@ -139,7 +137,7 @@ ESTIMATE = f'''
       <h2 class="h-display reveal"><span class="chrome">Let's protect</span> <span class="violet-text">your home.</span></h2>
       <p class="lead reveal">Tell us what you need. We'll come measure, put a real number on it, and show you exactly what financing looks like for your address.</p>
     </div>
-    <form class="glass-strong reveal" id="estimateForm" style="padding:clamp(24px,4vw,42px)" novalidate>
+    <form class="glass-strong round-2xl reveal" id="estimateForm" style="padding:clamp(24px,4vw,42px)" novalidate>
       <div class="form-grid">
         <label class="fld">Full name<input name="name" required autocomplete="name" placeholder="Jane Rodriguez"></label>
         <label class="fld">Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="(954) 555-0142"></label>
@@ -164,7 +162,7 @@ ESTIMATE = f'''
       <input type="hidden" name="page_url">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
       <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:22px">Request My Free Estimate <i class="ri-arrow-right-up-line"></i></button>
-      <p class="form-note" id="formStatus" role="status" aria-live="polite">Prefer to talk? Call <a href="tel:{TEL}" style="color:var(--violet);font-weight:600">{PHONE}</a>.</p>
+      <p class="form-note" id="formStatus" role="status" aria-live="polite">Prefer to talk? Call <a href="tel:{TEL}" style="color:var(--violet-500);font-weight:600">{PHONE}</a>.</p>
     </form>
   </div>
 </section>
@@ -173,10 +171,10 @@ ESTIMATE = f'''
 FOOTER = f'''
 <footer class="footer">
   <div class="container">
-    <div class="glass" style="padding:clamp(28px,4vw,52px)">
+    <div class="glass round-2xl footer-inner">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo"><img src="/assets/brand/wrp-nav.webp" alt="{BIZ}" width="640" height="240"></div>
+          <div class="footer-logo"><img src="/assets/brand/wrp-nav.webp" alt="{BIZ}" width="640" height="279"></div>
           <p style="font-size:14.5px;font-weight:300;max-width:320px">Licensed South Florida roofing and impact window contractor. Protect · Enhance · Add Value — built for Florida.</p>
           <p style="font-size:12.5px;color:var(--muted);margin-top:14px">FL Certified Roofing Contractor <strong style="color:var(--ink-2)">{LIC}</strong><br>BBB Accredited · A+ Rating</p>
         </div>
@@ -193,7 +191,7 @@ FOOTER = f'''
         <div>
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:{TEL}"><i class="ri-phone-line"></i> {PHONE}</a></li>
+            <li><a href="tel:{TEL}"><i class="ri-phone-line"></i>{PHONE}</a></li>
             <li><i class="ri-map-pin-line"></i> 1700 Banks Rd, Unit 50-B<br>&nbsp;&nbsp;&nbsp;Margate, FL 33063</li>
             <li><i class="ri-time-line"></i> Mon–Sat, 8am–6pm</li>
           </ul>

@@ -3,9 +3,16 @@
 Static marketing site for **Windows Roofs Plus Inc.** (WRP) — licensed South Florida
 roofing, impact window, and impact door contractor based in Margate, FL.
 
-Built on the same pattern as `speedyremodelingcompany` — hand-authored static HTML,
-a small Python builder for the repeated pages, one shared CSS design system, and a
-Vercel Edge Function for lead capture. No framework, no build step required to serve.
+Built on the same pattern *and the same design system* as `speedyremodelingcompany` —
+hand-authored static HTML, a small Python builder for the repeated pages, the FDME
+glass design system, and a Vercel Edge Function for lead capture. No framework, no
+build step required to serve.
+
+The FDME system ships with a teal primary and an orange CTA. Speedy overrides the teal
+with navy; WRP overrides it with brand violet (`--violet-500 #7C22CE`, headings
+`--plum-900 #2A0F52`). The orange CTA gradient is a system constant in both. Everything
+else — Instrument Serif italic display, glass cards, orbit rings, floating hero cards,
+word-by-word blur-in headline, numbered service blocks — is the same as Speedy.
 
 ---
 
@@ -14,9 +21,9 @@ Vercel Edge Function for lead capture. No framework, no build step required to s
 | Piece | What it is |
 |---|---|
 | Pages | Static HTML, served as-is |
-| Styling | One file: `assets/css/wrp.css` (light theme — white ground, graphite type, violet brand accent) |
+| Styling | One file: `assets/css/wrp.css` — the FDME design system in a WRP colorway (same system as speedyremodelingcompany.com) |
 | Behavior | One file: `assets/js/wrp.js` (scroll reveal, mobile menu, form) |
-| Fonts | Self-hosted Barlow + Barlow Condensed (`assets/fonts/`) — no Google Fonts request |
+| Fonts | Self-hosted Instrument Serif (display) + Barlow (body) in `assets/fonts/` — no Google Fonts request |
 | Icons | Remixicon **subset** — 54 icons, 4 KB woff2, generated from the icons actually used |
 | Forms | `POST /api/lead` → Vercel Edge Function |
 | Hosting | Vercel (static + edge function) |
@@ -79,6 +86,7 @@ before the notification step. Nothing else changes.
 | File | Use |
 |---|---|
 | `wrp-nav.webp` | nav + footer lockup, composited onto a rounded dark plate so the dark logo art reads as a deliberate badge on the white page |
+| `hero-bg.jpg` | hero background — the architectural scene lifted from the logo art, standing in for Speedy's hero video until WRP has real footage |
 | `wrp-mark.webp` | hero mark, full lockup including *Built for Florida*, same rounded-plate treatment |
 | `wrp-social-share.jpg` | 1200×630 Open Graph card (white ground) |
 | `wrp-icon.png` / `apple-touch-icon.png` | favicon + iOS home screen |
