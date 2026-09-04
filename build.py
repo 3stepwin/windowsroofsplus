@@ -81,7 +81,7 @@ NAV = f'''
     <a href="/services/impact-doors.html">Impact Doors</a>
     <a href="/financing.html">Financing</a>
     <a href="/service-areas.html">Service Areas</a>
-    <a href="tel:{TEL}" style="color:var(--violet-3)"><i class="ri-phone-fill"></i> {PHONE}</a>
+    <a href="tel:{TEL}" style="color:var(--violet)"><i class="ri-phone-fill"></i> {PHONE}</a>
   </div>
 </div>
 '''
@@ -90,7 +90,7 @@ def page_hero(eyebrow, h1_chrome, h1_violet, lead, crumbs=None):
     bc = ""
     if crumbs:
         items = " <span style='opacity:.4'>/</span> ".join(
-            f'<a href="{u}" style="color:var(--muted)">{t}</a>' if u else f'<span style="color:var(--chrome-2)">{t}</span>'
+            f'<a href="{u}" style="color:var(--muted)">{t}</a>' if u else f'<span style="color:var(--ink-2)">{t}</span>'
             for t, u in crumbs)
         bc = f'<nav aria-label="Breadcrumb" style="font-size:13px;margin-bottom:22px">{items}</nav>'
     return f'''
@@ -115,7 +115,7 @@ def faq_block(title, pairs):
         f'<details{" open" if i == 0 else ""}><summary>{q}</summary><p>{a}</p></details>'
         for i, (q, a) in enumerate(pairs))
     return f'''
-<section class="sec" id="faq">
+<section class="sec sec-alt" id="faq">
   <div class="container" style="max-width:880px">
     <div class="sec-head">
       <span class="eyebrow reveal">Straight Answers</span>
@@ -164,7 +164,7 @@ ESTIMATE = f'''
       <input type="hidden" name="page_url">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
       <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:22px">Request My Free Estimate <i class="ri-arrow-right-up-line"></i></button>
-      <p class="form-note" id="formStatus" role="status" aria-live="polite">Prefer to talk? Call <a href="tel:{TEL}" style="color:var(--violet-3);font-weight:600">{PHONE}</a>.</p>
+      <p class="form-note" id="formStatus" role="status" aria-live="polite">Prefer to talk? Call <a href="tel:{TEL}" style="color:var(--violet);font-weight:600">{PHONE}</a>.</p>
     </form>
   </div>
 </section>
@@ -178,7 +178,7 @@ FOOTER = f'''
         <div>
           <div class="footer-logo"><img src="/assets/brand/wrp-nav.webp" alt="{BIZ}" width="640" height="240"></div>
           <p style="font-size:14.5px;font-weight:300;max-width:320px">Licensed South Florida roofing and impact window contractor. Protect · Enhance · Add Value — built for Florida.</p>
-          <p style="font-size:12.5px;color:var(--muted);margin-top:14px">FL Certified Roofing Contractor <strong style="color:var(--chrome-2)">{LIC}</strong><br>BBB Accredited · A+ Rating</p>
+          <p style="font-size:12.5px;color:var(--muted);margin-top:14px">FL Certified Roofing Contractor <strong style="color:var(--ink-2)">{LIC}</strong><br>BBB Accredited · A+ Rating</p>
         </div>
         <div>
           <h4>Services</h4>
@@ -292,7 +292,7 @@ def cross_links(current):
         <div class="icon-pill"><i class="{ic}"></i></div>
         <h3 class="h-display" style="margin:16px 0 8px;font-size:1.4rem"><span class="chrome">{t}</span></h3>
         <p style="font-size:14.5px">{d}</p>
-        <span style="color:var(--violet-3);font-weight:600;font-size:14px;display:inline-block;margin-top:14px">Learn more <i class="ri-arrow-right-line"></i></span>
+        <span style="color:var(--violet);font-weight:600;font-size:14px;display:inline-block;margin-top:14px">Learn more <i class="ri-arrow-right-line"></i></span>
       </a>''' for u, ic, t, d in picks)
     return f'''<section class="sec"><div class="container">
       <div class="sec-head"><span class="eyebrow reveal">Also From WRP</span>
@@ -618,9 +618,9 @@ def build_areas():
       f'''<div class="glass card reveal" style="padding:20px">
         <h3 class="h-display" style="font-size:1.25rem;margin-bottom:12px"><span class="chrome">{name}, FL</span></h3>
         <ul style="display:flex;flex-direction:column;gap:7px">
-          <li><a href="/services/roofing.html" style="font-size:14px;color:var(--chrome-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> Roofing</a></li>
-          <li><a href="/services/impact-windows.html" style="font-size:14px;color:var(--chrome-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> Impact Windows</a></li>
-          <li><a href="/services/impact-doors.html" style="font-size:14px;color:var(--chrome-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> Impact Doors</a></li>
+          <li><a href="/services/roofing.html" style="font-size:14px;color:var(--ink-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> Roofing</a></li>
+          <li><a href="/services/impact-windows.html" style="font-size:14px;color:var(--ink-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> Impact Windows</a></li>
+          <li><a href="/services/impact-doors.html" style="font-size:14px;color:var(--ink-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> Impact Doors</a></li>
         </ul>
       </div>''' for name, slug in CITIES)
 
@@ -713,9 +713,9 @@ def build_thanks():
     <div class="glass reveal" style="padding:26px;margin-top:44px;text-align:left">
       <h3 class="h-display" style="font-size:1.3rem;margin-bottom:12px"><span class="chrome">While you wait</span></h3>
       <ul style="display:flex;flex-direction:column;gap:10px">
-        <li style="font-size:14.5px"><a href="/financing.html" style="color:var(--chrome-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> How PACE and conventional financing compare</a></li>
-        <li style="font-size:14.5px"><a href="/services/impact-windows.html" style="color:var(--chrome-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> What impact windows actually do for your insurance</a></li>
-        <li style="font-size:14.5px"><a href="/services/roofing.html" style="color:var(--chrome-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> Florida's 25% roof rule, explained</a></li>
+        <li style="font-size:14.5px"><a href="/financing.html" style="color:var(--ink-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> How PACE and conventional financing compare</a></li>
+        <li style="font-size:14.5px"><a href="/services/impact-windows.html" style="color:var(--ink-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> What impact windows actually do for your insurance</a></li>
+        <li style="font-size:14.5px"><a href="/services/roofing.html" style="color:var(--ink-2)"><i class="ri-arrow-right-s-line" style="color:var(--violet-2)"></i> Florida's 25% roof rule, explained</a></li>
       </ul>
     </div>
   </div>

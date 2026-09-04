@@ -14,7 +14,7 @@ Vercel Edge Function for lead capture. No framework, no build step required to s
 | Piece | What it is |
 |---|---|
 | Pages | Static HTML, served as-is |
-| Styling | One file: `assets/css/wrp.css` (dark chrome + violet design system) |
+| Styling | One file: `assets/css/wrp.css` (light theme — white ground, graphite type, violet brand accent) |
 | Behavior | One file: `assets/js/wrp.js` (scroll reveal, mobile menu, form) |
 | Fonts | Self-hosted Barlow + Barlow Condensed (`assets/fonts/`) — no Google Fonts request |
 | Icons | Remixicon **subset** — 54 icons, 4 KB woff2, generated from the icons actually used |
@@ -78,9 +78,9 @@ before the notification step. Nothing else changes.
 
 | File | Use |
 |---|---|
-| `wrp-nav.png` | nav + footer lockup, edges feathered to blend into the dark ground |
-| `wrp-mark.png` | hero mark, full lockup including *Built for Florida* |
-| `wrp-social-share.jpg` | 1200×630 Open Graph card |
+| `wrp-nav.webp` | nav + footer lockup, composited onto a rounded dark plate so the dark logo art reads as a deliberate badge on the white page |
+| `wrp-mark.webp` | hero mark, full lockup including *Built for Florida*, same rounded-plate treatment |
+| `wrp-social-share.jpg` | 1200×630 Open Graph card (white ground) |
 | `wrp-icon.png` / `apple-touch-icon.png` | favicon + iOS home screen |
 
 Regenerate them from the master with the Pillow snippet in the commit that added them.

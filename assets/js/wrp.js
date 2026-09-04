@@ -42,7 +42,7 @@
   if (!form) return;
 
   var status = document.getElementById('formStatus');
-  var PHONE_HTML = '<a href="tel:+19547068028" style="color:var(--violet-3);font-weight:600">(954) 706-8028</a>';
+  var PHONE_HTML = '<a href="tel:+19547068028" style="color:var(--violet);font-weight:600">(954) 706-8028</a>';
 
   function say(html) { if (status) status.innerHTML = html; }
 
