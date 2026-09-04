@@ -8,11 +8,31 @@ hand-authored static HTML, a small Python builder for the repeated pages, the FD
 glass design system, and a Vercel Edge Function for lead capture. No framework, no
 build step required to serve.
 
-The FDME system ships with a teal primary and an orange CTA. Speedy overrides the teal
-with navy; WRP overrides it with brand violet (`--violet-500 #7C22CE`, headings
-`--plum-900 #2A0F52`). The orange CTA gradient is a system constant in both. Everything
-else — Instrument Serif italic display, glass cards, orbit rings, floating hero cards,
-word-by-word blur-in headline, numbered service blocks — is the same as Speedy.
+`_ds/` holds the same FDME design system files Speedy runs on, copied verbatim
+(`colors_and_type.css` and `shared/fdme.css` are md5-identical to Speedy's). Every page
+loads them in the same order Speedy does, then `assets/css/wrp.css` on top:
+
+```html
+<link rel="stylesheet" href="/_ds/fdme-design-system-…/colors_and_type.css">
+<link rel="stylesheet" href="/_ds/fdme-design-system-…/shared/fdme.css">
+<link rel="stylesheet" href="/assets/css/wrp.css">
+```
+
+The system ships teal-primary / orange-CTA. Speedy overrides the teal with navy; WRP
+overrides it with brand violet (`--violet-500 #7C22CE`, headings `--plum-900 #2A0F52`).
+`.fdme-cta` — the orange CTA gradient — is a system constant and is used unmodified on
+both sites. `wrp.css` does not redefine anything the system already provides identically
+(`.blur-in`, `.blur-word`, `.float-y`, `.ken-burns`, `.pulse-ring`, `.reveal`,
+`.icon-pill-orange`, `.stat-value-orange`, `.video-light-tint-soft`).
+
+**One deviation from the upstream copy.** `colors_and_type.css` `@import`s Inter and
+Poppins from Google Fonts. Those families back `--fdme-font-body` / `--fdme-font-display`,
+which are only consumed by the `.fdme-h1` / `.fdme-h2` / `.fdme-lede` / `.fdme-body` type
+roles — and no page here uses them (`.fdme-cta` is the only system class in the markup).
+`fdme.css` sets the actually-rendered families to Barlow and Instrument Serif, both
+self-hosted. The import was a render-blocking third-party request for two fonts that never
+paint, so it is commented out with an explanatory note. Restore it if a page ever adopts
+the `.fdme-*` type roles.
 
 ---
 
@@ -21,7 +41,7 @@ word-by-word blur-in headline, numbered service blocks — is the same as Speedy
 | Piece | What it is |
 |---|---|
 | Pages | Static HTML, served as-is |
-| Styling | One file: `assets/css/wrp.css` — the FDME design system in a WRP colorway (same system as speedyremodelingcompany.com) |
+| Styling | The vendored FDME design system in `_ds/` + `assets/css/wrp.css` as the WRP colorway layer |
 | Behavior | One file: `assets/js/wrp.js` (scroll reveal, mobile menu, form) |
 | Fonts | Self-hosted Instrument Serif (display) + Barlow (body) in `assets/fonts/` — no Google Fonts request |
 | Icons | Remixicon **subset** — 54 icons, 4 KB woff2, generated from the icons actually used |
@@ -31,6 +51,10 @@ word-by-word blur-in headline, numbered service blocks — is the same as Speedy
 ## Layout
 
 ```
+_ds/fdme-design-system-…/       vendored FDME design system (byte-identical to Speedy's)
+  colors_and_type.css             tokens
+  shared/fdme.css                 primitives (.glass, .fdme-cta, .h-display, motion)
+  _ds_bundle.js                   nav/footer injection + reveal — unused here, kept for parity
 index.html                      homepage
 services/roofing.html           roofing hub
 services/impact-windows.html    impact window hub

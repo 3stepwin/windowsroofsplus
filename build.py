@@ -51,6 +51,8 @@ def head(title, desc, path, keywords="", extra_ld=None, og_title=None):
 <link rel="preload" href="/assets/fonts/Barlow-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/fonts/remixicon-subset.css">
+<link rel="stylesheet" href="/_ds/fdme-design-system-78336979-7a54-41e8-b9f6-e66e8cb27e16/colors_and_type.css">
+<link rel="stylesheet" href="/_ds/fdme-design-system-78336979-7a54-41e8-b9f6-e66e8cb27e16/shared/fdme.css">
 <link rel="stylesheet" href="/assets/css/wrp.css">
 {ld}
 </head>
@@ -69,7 +71,7 @@ NAV = f'''
       <a href="/services/impact-doors.html">Impact Doors</a>
       <a href="/financing.html">Financing</a>
       <a href="/service-areas.html">Service Areas</a>
-      <a href="#estimate" class="btn btn-primary btn-sm" style="margin-left:6px">Free Estimate</a>
+      <a href="#estimate" class="fdme-cta btn btn-sm" style="margin-left:6px">Free Estimate</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><i class="ri-menu-line"></i></button>
   </nav>
@@ -101,7 +103,7 @@ def page_hero(eyebrow, h1_chrome, h1_violet, lead, crumbs=None):
     </h1>
     <p class="lead blur-in" style="animation-delay:.26s;max-width:720px;margin-top:22px">{lead}</p>
     <div class="hero-cta blur-in" style="animation-delay:.38s">
-      <a href="#estimate" class="btn btn-primary btn-lg">Free Estimate <i class="ri-arrow-right-up-line"></i></a>
+      <a href="#estimate" class="fdme-cta btn btn-lg">Free Estimate <i class="ri-arrow-right-up-line"></i></a>
       <a href="tel:{TEL}" class="btn btn-ghost btn-lg"><i class="ri-phone-line" style="color:var(--violet-500)"></i>{PHONE}</a>
     </div>
   </div>
@@ -161,7 +163,7 @@ ESTIMATE = f'''
       </div>
       <input type="hidden" name="page_url">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:22px">Request My Free Estimate <i class="ri-arrow-right-up-line"></i></button>
+      <button type="submit" class="fdme-cta btn btn-lg" style="width:100%;margin-top:22px">Request My Free Estimate <i class="ri-arrow-right-up-line"></i></button>
       <p class="form-note" id="formStatus" role="status" aria-live="polite">Prefer to talk? Call <a href="tel:{TEL}" style="color:var(--violet-500);font-weight:600">{PHONE}</a>.</p>
     </form>
   </div>
@@ -208,7 +210,7 @@ FOOTER = f'''
     </div>
   </div>
 </footer>
-<a href="tel:{TEL}" class="btn btn-primary float-call"><i class="ri-phone-fill"></i> Call {PHONE}</a>
+<a href="tel:{TEL}" class="fdme-cta btn float-call"><i class="ri-phone-fill"></i> Call {PHONE}</a>
 <script src="/assets/js/wrp.js" defer></script>
 </body>
 </html>
@@ -457,7 +459,7 @@ def build_windows():
     <h2 class="h-display" style="margin:18px 0 16px"><span class="chrome">Protecting some openings<br>is not protecting the home.</span></h2>
     <p class="lead">Wind doesn't dismantle a house from the outside. It finds one unprotected opening, gets inside, pressurizes the interior, and pushes outward on the roof and walls at the same moment the storm is pushing in. A single unprotected slider or garage-adjacent window can undo the protection everywhere else — and insurance credits generally scale with how completely the openings are covered.</p>
     <p style="margin-top:14px">If budget means phasing the work, we'll tell you honestly which openings to do first — largest, most exposed, most likely to be struck — rather than quoting whatever is easiest to install.</p>
-    <a href="#estimate" class="btn btn-primary" style="margin-top:24px">Price my openings <i class="ri-arrow-right-up-line"></i></a>
+    <a href="#estimate" class="fdme-cta btn" style="margin-top:24px">Price my openings <i class="ri-arrow-right-up-line"></i></a>
   </div>
 </div></section>
 
@@ -669,7 +671,7 @@ def build_areas():
     <h2 class="h-display"><span class="chrome">Not sure if you're in range?</span></h2>
     <p class="lead" style="margin-top:16px">Call and ask. If we're not the right fit for your address, we'll say so rather than waste your afternoon.</p>
     <div class="hero-cta" style="margin-top:26px">
-      <a href="tel:{TEL}" class="btn btn-primary btn-lg"><i class="ri-phone-fill"></i> {PHONE}</a>
+      <a href="tel:{TEL}" class="fdme-cta btn btn-lg"><i class="ri-phone-fill"></i> {PHONE}</a>
       <a href="#estimate" class="btn btn-ghost btn-lg">Request an estimate</a>
     </div>
   </div>
@@ -705,7 +707,7 @@ def build_thanks():
       on-site estimate. If it's urgent — an active leak or storm damage — call us directly and we'll move you up.
     </p>
     <div class="hero-cta blur-in" style="animation-delay:.38s">
-      <a href="tel:{TEL}" class="btn btn-primary btn-lg"><i class="ri-phone-fill"></i> {PHONE}</a>
+      <a href="tel:{TEL}" class="fdme-cta btn btn-lg"><i class="ri-phone-fill"></i> {PHONE}</a>
       <a href="/" class="btn btn-ghost btn-lg">Back to home</a>
     </div>
     <div class="glass reveal" style="padding:26px;margin-top:44px;text-align:left">

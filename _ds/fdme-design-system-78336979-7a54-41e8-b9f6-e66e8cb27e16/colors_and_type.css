@@ -1,0 +1,212 @@
+/* ================================================================
+   FDME Design System — Colors & Typography Tokens
+   Florida Digital Marketing Experts
+   Source: src/index.css + src/pages/*.tsx (Tailwind inline hex)
+   ================================================================ */
+
+/* WRP: the upstream file @imports Inter + Poppins from Google Fonts here.
+   Those families back --fdme-font-body / --fdme-font-display, which are only
+   consumed by the .fdme-h1/.fdme-h2/.fdme-lede/.fdme-body type roles. This site
+   uses none of them (grep: only .fdme-cta is used), and fdme.css sets the actual
+   rendered families to Barlow + Instrument Serif, both self-hosted under
+   /assets/fonts. The import was therefore a render-blocking third-party request
+   for two fonts that never paint, so it is commented out. This is the ONLY
+   deviation from the upstream copy in speedyremodelingcompany.
+   Restore this line if a page ever adopts the .fdme-* type roles. */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800;900&display=swap'); */
+
+:root {
+  /* ---------- BRAND / PRIMARY ----------------------------------- */
+  /* Teal = trust, tech, Florida ocean. The dominant brand color.   */
+  --fdme-teal-50:  #F0FDFA;   /* surface / section background */
+  --fdme-teal-100: #E6FFFA;   /* soft surface tint */
+  --fdme-teal-400: #14B8A6;   /* primary teal — accent color */
+  --fdme-teal-500: #0D9488;   /* primary teal — headings, nav brand */
+  --fdme-teal-600: #0B7D72;   /* press / darker */
+
+  /* ---------- BRAND / SECONDARY --------------------------------- */
+  /* Orange = action, Florida sunset. ALL CTAs use this gradient.   */
+  --fdme-orange-50:  #FFF7ED; /* surface tint */
+  --fdme-orange-300: #FB923C; /* gradient light */
+  --fdme-orange-500: #F97316; /* gradient base — primary CTA */
+  --fdme-orange-600: #EA580C; /* hover / press */
+
+  /* ---------- BRAND / DEEP ------------------------------------- */
+  /* Navy used for section titles and high-contrast body headings.  */
+  --fdme-navy-900: #0A2463;   /* H1/H2/H3 headings */
+  --fdme-navy-700: #1E40AF;   /* gradient partner */
+
+  /* ---------- NEUTRALS / FOREGROUND ---------------------------- */
+  --fdme-fg-1:     #0A2463;   /* primary text (= navy) */
+  --fdme-fg-2:     #2D3748;   /* body copy — slate */
+  --fdme-fg-3:     #64748B;   /* muted body / captions */
+  --fdme-fg-4:     #94A3B8;   /* labels, timestamps */
+  --fdme-fg-on-brand: #FFFFFF;/* text over teal/orange */
+
+  /* ---------- NEUTRALS / BACKGROUND ---------------------------- */
+  --fdme-bg-1:     #FFFFFF;   /* app surface */
+  --fdme-bg-2:     #F8FAFC;   /* subtle section */
+  --fdme-bg-3:     #F0FDFA;   /* teal-tinted section */
+  --fdme-bg-4:     #FFF7ED;   /* orange-tinted section */
+  --fdme-border-1: #E5E7EB;   /* card border */
+  --fdme-border-2: #F3F4F6;   /* subtle divider */
+
+  /* ---------- SEMANTIC / STATUS ------------------------------- */
+  --fdme-success:  #10B981;   /* "More appointments booked" style */
+  --fdme-success-700: #059669;
+  --fdme-warning:  #F97316;   /* reuses brand orange */
+  --fdme-danger:   #EF4444;   /* missed calls, "losing money" */
+  --fdme-danger-700: #DC2626;
+  --fdme-info:     #14B8A6;
+
+  /* ---------- SIGNATURE GRADIENTS ------------------------------ */
+  --fdme-grad-cta:       linear-gradient(90deg, #F97316 0%, #FB923C 100%); /* @kind color */
+  --fdme-grad-cta-hover: linear-gradient(90deg, #EA580C 0%, #F97316 100%); /* @kind color */
+  --fdme-grad-teal:      linear-gradient(135deg, #14B8A6 0%, #0D9488 100%); /* @kind color */
+  --fdme-grad-hero:      linear-gradient(180deg, rgba(13,148,136,0.70) 0%, rgba(13,148,136,0.60) 50%, rgba(13,148,136,0.70) 100%); /* @kind color */
+  --fdme-grad-brand:     linear-gradient(135deg, #0A2463 0%, #14B8A6 100%); /* @kind color */
+  --fdme-grad-surface-teal:   linear-gradient(135deg, #F0FDFA 0%, #FFFFFF 100%); /* @kind color */
+  --fdme-grad-surface-orange: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%); /* @kind color */
+  --fdme-grad-danger-card:    linear-gradient(135deg, #FEF2F2 0%, #FFF7ED 100%); /* @kind color */
+
+  /* ---------- TYPE FAMILIES ------------------------------------ */
+  --fdme-font-body:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  --fdme-font-display:  'Poppins', 'Inter', -apple-system, sans-serif;
+  --fdme-font-mono:     ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---------- TYPE SIZES --------------------------------------- */
+  --fdme-text-xs:   0.75rem;   /* 12 */
+  --fdme-text-sm:   0.875rem;  /* 14 — nav, small labels */
+  --fdme-text-base: 1rem;      /* 16 — body */
+  --fdme-text-lg:   1.125rem;  /* 18 */
+  --fdme-text-xl:   1.25rem;   /* 20 — subhead */
+  --fdme-text-2xl:  1.5rem;    /* 24 — card title */
+  --fdme-text-3xl:  1.875rem;  /* 30 — h3 */
+  --fdme-text-4xl:  2.25rem;   /* 36 — h2 mobile */
+  --fdme-text-5xl:  3rem;      /* 48 — h2 desktop */
+  --fdme-text-6xl:  3.75rem;   /* 60 — h1 mobile */
+  --fdme-text-7xl:  4.5rem;    /* 72 — h1 desktop / stat hero */
+
+  /* ---------- WEIGHTS ------------------------------------------ */
+  --fdme-w-regular:  400; /* @kind font */
+  --fdme-w-medium:   500; /* @kind font */
+  --fdme-w-semibold: 600; /* @kind font */
+  --fdme-w-bold:     700; /* @kind font */
+  --fdme-w-extrabold:800; /* @kind font */
+  --fdme-w-black:    900; /* @kind font */
+
+  /* ---------- LINE HEIGHTS ------------------------------------- */
+  --fdme-lh-tight:   1.1;   /* @kind font */
+  --fdme-lh-snug:    1.25;  /* @kind font */
+  --fdme-lh-normal:  1.5;   /* @kind font */
+  --fdme-lh-relaxed: 1.625; /* @kind font */
+
+  /* ---------- SPACING ------------------------------------------ */
+  --fdme-space-1:   4px;
+  --fdme-space-2:   8px;
+  --fdme-space-3:   12px;
+  --fdme-space-4:   16px;
+  --fdme-space-5:   20px;
+  --fdme-space-6:   24px;
+  --fdme-space-8:   32px;
+  --fdme-space-10:  40px;
+  --fdme-space-12:  48px;
+  --fdme-space-16:  64px;
+  --fdme-space-20:  80px;  /* section vertical padding */
+
+  /* ---------- RADII -------------------------------------------- */
+  --fdme-radius-sm:   4px;
+  --fdme-radius-md:   8px;
+  --fdme-radius-lg:   12px;   /* cards */
+  --fdme-radius-xl:   16px;   /* large cards */
+  --fdme-radius-2xl:  20px;   /* hero cards */
+  --fdme-radius-pill: 9999px; /* pills, CTA buttons */
+
+  /* ---------- SHADOWS ------------------------------------------ */
+  --fdme-shadow-sm:  0 1px 2px 0 rgba(10, 36, 99, 0.05);
+  --fdme-shadow-md:  0 4px 6px -1px rgba(10, 36, 99, 0.08), 0 2px 4px -2px rgba(10, 36, 99, 0.05);
+  --fdme-shadow-lg:  0 10px 15px -3px rgba(10, 36, 99, 0.10), 0 4px 6px -4px rgba(10, 36, 99, 0.05);
+  --fdme-shadow-xl:  0 20px 25px -5px rgba(10, 36, 99, 0.12), 0 8px 10px -6px rgba(10, 36, 99, 0.06);
+  --fdme-shadow-2xl: 0 25px 50px -12px rgba(10, 36, 99, 0.20);
+  --fdme-shadow-cta: 0 10px 20px -5px rgba(249, 115, 22, 0.35);
+
+  /* ---------- MOTION ------------------------------------------- */
+  --fdme-ease:          cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --fdme-ease-out:      cubic-bezier(0, 0, 0.2, 1);    /* @kind other */
+  --fdme-dur-fast:      150ms; /* @kind other */
+  --fdme-dur-base:      200ms; /* @kind other */
+  --fdme-dur-slow:      300ms; /* @kind other */
+  --fdme-dur-hero:      500ms; /* @kind other */
+}
+
+/* ================================================================
+   SEMANTIC TYPE ROLES
+   ================================================================ */
+.fdme-h1 {
+  font-family: var(--fdme-font-display);
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  font-weight: var(--fdme-w-bold);
+  line-height: var(--fdme-lh-tight);
+  color: var(--fdme-fg-on-brand);
+  letter-spacing: -0.02em;
+}
+.fdme-h2 {
+  font-family: var(--fdme-font-display);
+  font-size: clamp(2.25rem, 3vw + 1rem, 3rem);
+  font-weight: var(--fdme-w-bold);
+  line-height: var(--fdme-lh-tight);
+  color: var(--fdme-navy-900);
+  letter-spacing: -0.01em;
+}
+.fdme-h3 {
+  font-family: var(--fdme-font-display);
+  font-size: var(--fdme-text-2xl);
+  font-weight: var(--fdme-w-bold);
+  line-height: var(--fdme-lh-snug);
+  color: var(--fdme-navy-900);
+}
+.fdme-eyebrow {
+  font-family: var(--fdme-font-body);
+  font-size: var(--fdme-text-xs);
+  font-weight: var(--fdme-w-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fdme-teal-400);
+}
+.fdme-lede {
+  font-family: var(--fdme-font-body);
+  font-size: var(--fdme-text-xl);
+  font-weight: var(--fdme-w-regular);
+  line-height: var(--fdme-lh-relaxed);
+  color: var(--fdme-fg-2);
+}
+.fdme-body {
+  font-family: var(--fdme-font-body);
+  font-size: var(--fdme-text-base);
+  font-weight: var(--fdme-w-regular);
+  line-height: var(--fdme-lh-relaxed);
+  color: var(--fdme-fg-2);
+}
+.fdme-small {
+  font-family: var(--fdme-font-body);
+  font-size: var(--fdme-text-sm);
+  color: var(--fdme-fg-3);
+}
+.fdme-stat {
+  font-family: var(--fdme-font-display);
+  font-size: var(--fdme-text-5xl);
+  font-weight: var(--fdme-w-extrabold);
+  color: var(--fdme-orange-500);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* ================================================================
+   UTILITY HELPERS
+   ================================================================ */
+.fdme-gradient-text-cta {
+  background: var(--fdme-grad-cta);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
