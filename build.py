@@ -279,13 +279,13 @@ def spec_table(rows, title):
 def cross_links(current):
     cards = {
       "roofing": ("/services/roofing.html", "ri-home-4-fill", "Roofing",
-                  "Shingle, tile, metal and flat systems — repair, replacement and new construction."),
+                  "Shingle, tile, metal and flat — repairs, full replacements and new construction."),
       "impact-windows": ("/services/impact-windows.html", "ri-window-2-fill", "Impact Windows",
-                  "Florida-made hurricane-rated glass in single-hung, slider, casement and architectural shapes."),
+                  "Florida-made hurricane glass, in every style and shape your house has."),
       "impact-doors": ("/services/impact-doors.html", "ri-door-open-fill", "Impact Doors",
-                  "Sliding glass, French and entry doors rated for wind-borne debris."),
+                  "Patio sliders, French doors and entry doors built to take a hit."),
       "financing": ("/financing.html", "ri-bank-card-fill", "Financing &amp; PACE",
-                  "PACE assessments, conventional lending and credit-flexible programs."),
+                  "Payment plans, including options if your credit isn't perfect."),
     }
     picks = [v for k, v in cards.items() if k != current][:3]
     inner = "".join(f'''<a href="{u}" class="glass card hover-lift reveal" style="display:block">
@@ -295,8 +295,8 @@ def cross_links(current):
         <span style="color:var(--violet);font-weight:600;font-size:14px;display:inline-block;margin-top:14px">Learn more <i class="ri-arrow-right-line"></i></span>
       </a>''' for u, ic, t, d in picks)
     return f'''<section class="sec"><div class="container">
-      <div class="sec-head"><span class="eyebrow reveal">Also From WRP</span>
-      <h2 class="h-display reveal"><span class="chrome">One contractor,<br>the whole envelope.</span></h2></div>
+      <div class="sec-head"><span class="eyebrow reveal">We Also Do</span>
+      <h2 class="h-display reveal"><span class="chrome">One company for<br>the whole outside.</span></h2></div>
       <div class="grid-3">{inner}</div></div></section>'''
 
 
@@ -305,18 +305,18 @@ def cross_links(current):
 def build_roofing():
     path = "/services/roofing.html"
     faqs = [
-      ("How do I know whether my roof needs repair or full replacement?",
-       "Three things decide it: how much of the roof section is affected, the condition of the decking underneath, and how much service life the covering has left. Florida's 25% rule sets a hard limit — once more than a quarter of a roof section is repaired or replaced inside a twelve-month period, that whole section generally has to be brought up to current code. We give you the assessment in writing, with the reason, before anything is torn off."),
-      ("Which roofing systems do you install?",
-       "Asphalt shingle, concrete and clay tile, metal, and flat or low-slope membrane. Each suits a different building and budget: shingle is the cost-effective default, tile carries thermal benefits and the classic South Florida look, metal offers the longest service life with excellent wind and impact resistance, and membrane systems handle flat sections and commercial decks."),
-      ("What is the High-Velocity Hurricane Zone and does it apply to me?",
-       "Broward and Miami-Dade counties sit inside Florida's High-Velocity Hurricane Zone. Roofing in the HVHZ has to meet the strictest wind-uplift and wind-borne-debris provisions in the Florida Building Code — specific underlayment, rated fasteners, and inspection requirements that don't apply in most of the country. Every roof we install is permitted and inspected to those standards."),
-      ("Do you handle storm damage and insurance documentation?",
-       "Yes. We photograph and document conditions thoroughly so your adjuster has what they need, and we complete the wind-mitigation form that can reduce your premium. We are contractors, not public adjusters — we document what we find accurately and let the carrier make its determination."),
-      ("How long does a roof replacement take?",
-       "Most single-family homes are torn off and dried in within a day or two, with the full job typically running several days depending on size, system, and whether decking repairs are needed. Tile takes longer than shingle. Weather and inspection scheduling affect the calendar, and we tell you when either moves."),
-      ("Can I finance a roof replacement?",
-       "Yes. Roofing is one of the upgrades PACE was built to fund — repaid through a property tax assessment rather than a conventional loan, with approval leaning on equity and repayment ability rather than a credit-score minimum. Conventional financing and credit-flexible programs are also available. We confirm what your address qualifies for before you commit."),
+      ("How do I know if I need a repair or a whole new roof?",
+       "It comes down to how much of the roof is affected, what shape the wood underneath is in, and how much life the roof has left. There's also a Florida rule that once repairs pass about a quarter of a section, that whole section has to be brought up to code. We look, we tell you in writing what we found and why, and you decide before anything comes off."),
+      ("What kinds of roof do you do?",
+       "Shingle, tile, metal, and flat. Shingle is the most affordable and the most common. Tile looks classic and keeps the house cooler. Metal lasts the longest and handles wind the best but costs more up front. Flat roofing is for flat sections, additions and commercial buildings. We'll tell you which makes sense for your house and your budget."),
+      ("Does South Florida have stricter roofing rules?",
+       "Yes. Broward and Miami-Dade have the toughest building requirements in the country for wind — stricter materials, stricter fastening, stricter inspections than almost anywhere else. That's a good thing for you as a homeowner, and every roof we put on is permitted and inspected to those standards."),
+      ("Can you help with a storm damage claim?",
+       "We photograph and document everything so your adjuster has what they need, and we fill out the form that can lower your premium. To be clear about what we are: we're roofers, not public adjusters. We record honestly what we find — your insurance company makes the decision."),
+      ("How many days will my house be torn up?",
+       "Most homes are stripped and watertight again within a day or two, with the whole job usually running several days depending on size and whether there's wood to replace underneath. Tile takes longer than shingle. Rain and inspection scheduling can move things, and we'll tell you the moment they do."),
+      ("Can I pay for a roof monthly?",
+       "Yes. There are programs built for exactly this — including one you repay through your property tax bill, which looks at your home's equity rather than a credit score cutoff. Regular financing is available too. We check what your address qualifies for and show you the real payment before you agree to anything."),
     ]
     ld = [biz_ld(path), {"@context":"https://schema.org","@type":"Service","serviceType":"Roofing",
         "provider":{"@type":"RoofingContractor","name":BIZ,"telephone":TEL},
@@ -334,43 +334,43 @@ def build_roofing():
     html += NAV
     html += page_hero(
       "Roofing · Broward · Miami-Dade · Palm Beach",
-      "Roofs engineered",
+      "Roofs built",
       "for Florida weather.",
-      f"Shingle, tile, metal and flat systems — repaired, replaced and permitted to High-Velocity Hurricane Zone standards by a Florida Certified Roofing Contractor (license {LIC}).",
+      "Leaks, storm damage, or a roof that has simply reached the end of its life. Shingle, tile, metal and flat — we look at what you have, tell you straight whether it needs a repair or a replacement, and handle the permit with your city.",
       [("Home","/"),("Roofing",None)])
 
     html += f'''
 <section class="sec" style="padding-top:0"><div class="container">
   <div class="glass stats reveal">
-    <div class="stat"><div class="stat-value chrome">4</div><div class="stat-label">Roof Systems Installed</div></div>
-    <div class="stat"><div class="stat-value violet-text">HVHZ</div><div class="stat-label">Code Compliant</div></div>
+    <div class="stat"><div class="stat-value chrome">4</div><div class="stat-label">Kinds Of Roof We Work On</div></div>
+    <div class="stat"><div class="stat-value violet-text">Free</div><div class="stat-label">Roof Inspection</div></div>
     <div class="stat"><div class="stat-value chrome">A+</div><div class="stat-label">BBB Accredited</div></div>
-    <div class="stat"><div class="stat-value violet-text">$0</div><div class="stat-label">Estimate Cost</div></div>
+    <div class="stat"><div class="stat-value violet-text">$0</div><div class="stat-label">Cost For An Estimate</div></div>
   </div>
 </div></section>
 
 <section class="sec"><div class="container">
   <div class="sec-head">
     <span class="eyebrow reveal">Systems</span>
-    <h2 class="h-display reveal"><span class="chrome">Every roof South Florida uses.</span></h2>
-    <p class="lead reveal">The right system depends on your building, your budget, and how long you plan to own the home — not on what a contractor happens to have on the truck.</p>
+    <h2 class="h-display reveal"><span class="chrome">Every kind of roof<br>South Florida has.</span></h2>
+    <p class="lead reveal">The right one depends on your house, your budget, and how long you plan to stay — not on what a contractor happens to have on the truck that week.</p>
   </div>
   {feature_grid([
-    ("ri-stack-line","Asphalt Shingle","The cost-effective South Florida default, available across a wide range of colors and architectural profiles. Modern shingle systems paired with HVHZ-rated underlayment and fastening perform far better than the 20-year-old roofs they replace."),
-    ("ri-shapes-line","Concrete &amp; Clay Tile","The classic Florida look, with real thermal benefit — tile's air gap and mass slow heat transfer into the attic. Heavier and slower to install than shingle, and worth it on the right home."),
-    ("ri-shield-flash-line","Metal","The longest service life of anything we install, with excellent wind uplift and impact resistance. Higher up-front cost, lowest lifetime cost per year on a home you intend to keep."),
-    ("ri-layout-row-line","Flat &amp; Low-Slope","Membrane systems for flat sections, additions, and commercial decks. Flat roofs fail at details — seams, drains, penetrations — so this is where installation quality matters most."),
-    ("ri-drop-line","Leak Diagnosis &amp; Repair","Water rarely enters where it appears inside. We trace the actual entry point — flashing, pipe boots, valleys, failed sealant — rather than patching the ceiling stain and hoping."),
-    ("ri-building-2-line","New Construction","Roofing for additions, new builds and commercial projects, coordinated with your GC and permitted through the local building department."),
+    ("ri-stack-line","Shingle","The most common choice, and usually the most affordable. Plenty of colors and styles, and today's shingles hold up far better than the twenty-year-old roof they're replacing."),
+    ("ri-shapes-line","Tile","The classic Florida look, and it actually keeps the house cooler — the air space under tile slows the heat coming into your attic. Costs more and takes longer to install, and on the right house it's worth it."),
+    ("ri-shield-flash-line","Metal","Lasts the longest of anything we install and handles wind the best. It costs more up front, so it makes the most sense if you plan on staying in the house a long time."),
+    ("ri-layout-row-line","Flat Roofs","For flat sections, additions and commercial buildings. Flat roofs almost always fail at the edges, seams and drains rather than in the middle — which is why who installs it matters more here than anywhere else."),
+    ("ri-drop-line","Finding The Leak","Water almost never comes in directly above the stain on your ceiling. We track down where it's actually getting in and fix that, instead of patching the spot you can see and hoping."),
+    ("ri-building-2-line","Additions &amp; Commercial","New construction, room additions and commercial buildings, coordinated with your builder and permitted with the city."),
   ])}
 </div></section>
 
 {spec_table([
-  ("The 25% rule, plainly", "Florida Building Code limits how much of a roof section can be repaired before the entire section must be brought current. Cross 25% inside twelve months and a patch becomes a code-required section replacement. Knowing where you stand <em>before</em> the tear-off is the difference between a planned expense and a surprise."),
-  ("Decking is the part nobody quotes", "On older Broward homes, the sheathing under the covering has absorbed decades of South Florida rain. We probe and inspect the deck on every opened roof and put any required replacement on the written estimate rather than discovering it mid-job."),
-  ("Permits and inspections", "Each Broward municipality issues its own roofing permits and runs its own inspections, so timelines differ city to city. We pull the permit under our license and carry the job through final inspection — including the wind-mitigation form your insurer wants."),
-  ("Roof age and your policy", "Florida carriers increasingly price, condition, or decline coverage based on roof age and condition. If a renewal notice is what brought you here, tell us — it changes which options actually solve your problem."),
-], "What actually decides your roof job")}
+  ("Why a patch can turn into a roof", "Florida has a rule: once repairs cover more than about a quarter of a section of roof within a year, that whole section has to be brought up to today's code. It catches a lot of homeowners by surprise mid-job. We tell you which side of that line you're on before anyone starts pulling shingles off."),
+  ("The wood underneath", "On older homes there's often soft or rotted wood under the shingles that nobody sees until the roof comes off. We check for it and put it on the written estimate up front, so it isn't a phone call halfway through the job asking you for more money."),
+  ("We deal with the city, not you", "Every city in Broward runs its own permits and inspections, and they don't all move at the same speed. We pull the permit, meet the inspector, and hand you the paperwork your insurance company asks for afterward."),
+  ("If your insurance sent you a letter", "A lot of our calls start with a renewal notice or a non-renewal letter about the age of the roof. Tell us that up front — it changes what actually solves your problem, and sometimes there's a deadline attached."),
+], "What homeowners actually ask us")}
 
 {faq_block("Roofing questions,<br>answered straight.", faqs)}
 {cross_links("roofing")}
@@ -384,20 +384,20 @@ def build_roofing():
 def build_windows():
     path = "/services/impact-windows.html"
     faqs = [
-      ("Do impact windows lower my homeowners insurance?",
-       "In most cases yes. Florida carriers price wind-mitigation credits into premiums, and opening protection is one of the largest single credits available. After installation and permitting, a wind-mitigation inspection documents the upgrade for your carrier. The size of the credit depends on your policy, your roof, and how much of the home's openings are protected — protecting every opening generally earns more than protecting some."),
-      ("What is the difference between impact glass and hurricane shutters?",
-       "Shutters have to be deployed. Impact windows are always in place — which matters when a storm forms fast, when you are out of town, and every ordinary day of the year for noise, UV, security, and energy. Laminated impact glass is designed to crack and hold on the interlayer rather than breaking through, keeping the building envelope sealed."),
-      ("Are your impact windows made in Florida?",
-       "Yes. Our windows and doors are manufactured in Florida and installed factory direct. That means shorter lead times, product built to Florida's High-Velocity Hurricane Zone requirements rather than a generic national spec, and one fewer layer of markup between the plant and your home."),
-      ("Which window styles do you install?",
-       "Single-hung, horizontal sliders including XOX three-panel configurations, casements that open fully for ventilation, and architectural shapes and picture units for arches and feature openings. Most South Florida homes end up with a mix — sliders and single-hungs through the main elevations, casements where airflow matters."),
-      ("Do impact windows really reduce noise and energy bills?",
-       "Both are real, measurable secondary benefits. The laminated interlayer that stops debris also damps sound transmission, which is noticeable near a busy road or a flight path. And replacing old single-pane aluminum units reduces the heat load your air conditioning fights all summer. Neither benefit is the reason to buy them — but you get them every day, not just during a named storm."),
-      ("How long does the whole process take?",
-       "Manufacturing lead time is the long pole. Once measured, permitted and built, a typical single-family home installs in one to three days depending on opening count and whether stucco or trim repair is involved. We give you the real schedule at estimate time and tell you if the plant's queue moves."),
-      ("Can impact windows be financed?",
-       "Yes — impact windows are a qualifying PACE upgrade, repaid through a property tax assessment rather than a conventional loan, with approval based on equity and ability to repay rather than a credit-score minimum. Conventional and credit-flexible financing are also available. We confirm what your specific address qualifies for."),
+      ("Will this lower my insurance?",
+       "Usually, yes. Protecting your windows and doors earns one of the bigger discounts Florida insurers give. Once the work is inspected, an inspector fills out a form your insurance company uses to apply it. How much depends on your policy and your roof, and covering every opening is worth more than covering some. We won't promise you a number we don't control."),
+      ("How is this different from hurricane shutters?",
+       "Somebody has to put shutters up. That means being home, being able to climb a ladder, and having the warning to do it — and then living in the dark until you take them down. Impact windows are just your windows. Nothing to store, nothing to install at the last minute, nothing to do if a storm forms while you're out of town. And they're working on the noise and your power bill the other 360 days."),
+      ("Are they made in Florida?",
+       "Yes, and they come to us straight from the factory. You wait less, they're built for our weather instead of a national one-size-fits-all spec, and there's nobody in the middle adding to your price."),
+      ("What styles can I get?",
+       "Single-hung, which is the most common here. Sliders that go side to side. Casements that crank all the way open for a breeze. Big fixed picture windows, and arches or angled shapes if your house has them. Most homes end up with a mix, and we'll walk the house with you and work out what goes where."),
+      ("Is the quieter-and-cooler part real, or just sales talk?",
+       "It's real. The same layer inside the glass that stops debris also deadens sound, and it's obvious if you live near a road or under a flight path. And swapping out old single-pane aluminum windows takes a real load off your air conditioning in the summer. Neither is the reason people call us — but they're what people mention a year later."),
+      ("How long does the whole thing take?",
+       "Most of the wait is at the factory, not at your house. Once everything's measured, permitted and built, a typical home takes one to three days depending on how many windows there are and whether there's stucco work around them. We give you a real date up front and tell you right away if it changes."),
+      ("Can I pay monthly?",
+       "Yes. One option is repaid through your property tax bill and looks at your home's equity rather than a credit score cutoff. Regular financing is available too, including for people whose credit isn't perfect. We check what your address qualifies for and show you the actual payment first."),
     ]
     ld = [biz_ld(path), {"@context":"https://schema.org","@type":"Service","serviceType":"Impact Window Installation",
         "provider":{"@type":"RoofingContractor","name":BIZ,"telephone":TEL},
@@ -417,15 +417,15 @@ def build_windows():
       "Impact Windows · Florida-Made · Factory Direct",
       "Glass that holds",
       "when the wind doesn't.",
-      "Hurricane-rated laminated impact windows that stop wind-borne debris, cut outside noise, block UV, and reduce cooling load — manufactured in Florida and installed factory direct.",
+      "Windows built to take a hit from whatever the storm throws at them — and in the meantime, a quieter house, lower power bills, and floors that stop fading. Made in Florida, installed by our own crew.",
       [("Home","/"),("Impact Windows",None)])
 
     html += f'''
 <section class="sec" style="padding-top:0"><div class="container">
   <div class="glass stats reveal">
-    <div class="stat"><div class="stat-value chrome">HVHZ</div><div class="stat-label">Rated For Broward &amp; Dade</div></div>
-    <div class="stat"><div class="stat-value violet-text">FL</div><div class="stat-label">Manufactured In Florida</div></div>
-    <div class="stat"><div class="stat-value chrome">24/7</div><div class="stat-label">Protection, No Deployment</div></div>
+    <div class="stat"><div class="stat-value chrome">365</div><div class="stat-label">Days A Year You Benefit</div></div>
+    <div class="stat"><div class="stat-value violet-text">FL</div><div class="stat-label">Made Here In Florida</div></div>
+    <div class="stat"><div class="stat-value chrome">0</div><div class="stat-label">Shutters To Put Up</div></div>
     <div class="stat"><div class="stat-value violet-text">$0</div><div class="stat-label">Estimate Cost</div></div>
   </div>
 </div></section>
@@ -433,33 +433,33 @@ def build_windows():
 <section class="sec"><div class="container">
   <div class="sec-head">
     <span class="eyebrow reveal">Why Impact Glass</span>
-    <h2 class="h-display reveal"><span class="chrome">Five benefits.<br>One installation.</span></h2>
-    <p class="lead reveal">Storm protection is the headline. The reasons homeowners say they'd do it again are usually the other four.</p>
+    <h2 class="h-display reveal"><span class="chrome">Storm protection is<br>only half the reason.</span></h2>
+    <p class="lead reveal">Everybody buys them for hurricane season. What homeowners actually talk about afterward is how much quieter and cooler the house got.</p>
   </div>
   {feature_grid([
-    ("ri-shield-flash-fill","Storm Protection","Laminated glass is engineered to crack and stay bonded to its interlayer rather than blow through. The envelope stays sealed, interior pressure stays normal, and the roof isn't fighting an internal push from below."),
-    ("ri-shield-keyhole-line","Forced-Entry Resistance","The same interlayer that resists a flying roof tile resists a crowbar. Impact glass is markedly harder to breach than standard annealed or tempered glass — a security upgrade that runs year-round."),
-    ("ri-volume-down-line","Noise Reduction","The laminate damps sound transmission. Near a busy road, a school, or an approach path, the difference in a bedroom is immediately obvious."),
-    ("ri-temp-cold-line","Energy Efficiency","Replacing old single-pane aluminum units cuts the heat gain your A/C works against all summer. Lower load, steadier indoor temperature, less runtime."),
-    ("ri-sun-cloudy-line","UV Blocking","Impact laminate blocks the great majority of ultraviolet light, which is what fades flooring, art and upholstery on the sun-facing side of a Florida home."),
-    ("ri-money-dollar-circle-line","Insurance Credits","Opening protection is one of the largest wind-mitigation credits available to Florida homeowners. Once permitted and inspected, the upgrade is documented for your carrier."),
+    ("ri-shield-flash-fill","It Doesn't Blow Through","There's a tough clear layer bonded inside the glass. Something hits it hard enough, the glass cracks — but it stays in the frame. The wind and rain stay outside, which is the whole point."),
+    ("ri-shield-keyhole-line","Harder To Break Into","The same layer that stops a flying roof tile also stops a crowbar. It takes a long, loud effort to get through impact glass — long enough that most people give up. That protection is there every night, not just in September."),
+    ("ri-volume-down-line","A Quieter House","If you live near a busy road, a school, or under a flight path, this is the one people notice first. Close the window and the outside gets a lot further away."),
+    ("ri-temp-cold-line","Cooler In Summer","Old single-pane windows let the heat pour in and the cold air you paid for leak out. New ones mean the A/C runs less, the house stays evenly cool, and the August bill stops being a shock."),
+    ("ri-sun-cloudy-line","Your Floors Stop Fading","Impact glass blocks most of the sunlight that bleaches wood floors, rugs and furniture on the sunny side of the house. If you've got a faded stripe across the living room, that's what did it."),
+    ("ri-money-dollar-circle-line","A Discount On Your Policy","Protecting your windows and doors earns one of the bigger discounts Florida insurers offer. Once the work passes inspection, we make sure your insurance company gets the paperwork proving it."),
   ], violet_first=True)}
 </div></section>
 
 {spec_table([
-  ("Single-hung", "The South Florida workhorse — bottom sash operates, top sash fixed. Clean sightlines, the widest size range, and the most cost-effective way to protect a lot of openings at once."),
-  ("Horizontal slider &amp; XOX", "Two-panel sliders and three-panel XOX configurations for wide openings. Ideal on long elevations and where a taller unit would be awkward to operate."),
-  ("Casement", "Cranks fully open on a side hinge, so you get the entire opening for ventilation rather than half of it. The right choice where cross-breeze matters or where a window sits above a counter."),
-  ("Architectural shapes", "Arches, half-rounds, trapezoids and fixed picture units for feature openings and gable walls — impact-rated, matched to the operable units beside them."),
-], "Styles we install")}
+  ("Single-hung", "The most common window in South Florida. The bottom half slides up, the top half stays put. Comes in the widest range of sizes and it's the most affordable way to do a whole house at once."),
+  ("Sliders", "Slides side to side instead of up and down. Good for wide openings and for windows over a counter or a sink where reaching up to lift one would be awkward."),
+  ("Casement", "Opens all the way out on a hinge with a crank handle, so you get the whole opening for a breeze instead of half of it. Nice where you actually want air moving through."),
+  ("Arches &amp; custom shapes", "Half-rounds, arches, angled tops and big fixed picture windows. If your house has an unusual shape up high, it can still be done — and matched to the windows around it."),
+], "Which kind goes where")}
 
 <section class="sec"><div class="container">
   <div class="glass-violet reveal" style="padding:clamp(28px,4.5vw,54px)">
-    <span class="eyebrow">Whole-Home vs. Partial</span>
-    <h2 class="h-display" style="margin:18px 0 16px"><span class="chrome">Protecting some openings<br>is not protecting the home.</span></h2>
-    <p class="lead">Wind doesn't dismantle a house from the outside. It finds one unprotected opening, gets inside, pressurizes the interior, and pushes outward on the roof and walls at the same moment the storm is pushing in. A single unprotected slider or garage-adjacent window can undo the protection everywhere else — and insurance credits generally scale with how completely the openings are covered.</p>
-    <p style="margin-top:14px">If budget means phasing the work, we'll tell you honestly which openings to do first — largest, most exposed, most likely to be struck — rather than quoting whatever is easiest to install.</p>
-    <a href="#estimate" class="fdme-cta btn" style="margin-top:24px">Price my openings <i class="ri-arrow-right-up-line"></i></a>
+    <span class="eyebrow">Doing Some vs. Doing All</span>
+    <h2 class="h-display" style="margin:18px 0 16px"><span class="chrome">One window left out<br>undoes the rest.</span></h2>
+    <p class="lead">Wind only needs one way in. If it finds a single window or door that gave way, it gets inside and starts pushing on the roof and walls from within — while the storm is still pushing from outside. The eleven windows you did protect don't help much at that point. Insurance discounts work the same way: covering everything is worth more than covering most things.</p>
+    <p style="margin-top:14px">If the budget means doing it in stages, we'll tell you honestly which ones to do first — the biggest and most exposed — instead of quoting whatever happens to be easiest for us to install.</p>
+    <a href="#estimate" class="fdme-cta btn" style="margin-top:24px">Get my price <i class="ri-arrow-right-up-line"></i></a>
   </div>
 </div></section>
 
@@ -475,18 +475,18 @@ def build_windows():
 def build_doors():
     path = "/services/impact-doors.html"
     faqs = [
-      ("Why do doors matter more than windows for storm protection?",
-       "A door is usually the largest single opening in the building envelope, and sliding glass doors are the largest of all. That makes them the highest-consequence failure point: the bigger the breach, the faster the interior pressurizes. Homes with excellent impact windows and an unprotected slider are protected everywhere except where it matters most."),
-      ("What types of impact doors do you install?",
-       "Sliding glass doors including multi-panel and pocket configurations, French doors in both in-swing and out-swing, and impact-rated entry doors with rated hardware. All are Florida-manufactured and installed factory direct, matched to the impact windows around them."),
-      ("Does an impact door include the frame and hardware?",
-       "It has to. An impact door assembly is rated as a system — glass, frame, anchoring, and hardware together. Rated glass in an unrated frame, or an impact door hung on ordinary hardware, is not an impact-rated opening and will not be documented as one on a wind-mitigation inspection."),
-      ("Will impact doors reduce noise and energy loss the way windows do?",
-       "Yes, and often more noticeably — because doors are large and older sliders are frequently the leakiest openings in a Florida home. Replacing a worn aluminum slider typically produces the single biggest change in comfort and outside noise of any opening in the house."),
-      ("Can I do doors now and windows later, or vice versa?",
-       "You can, and sometimes budget requires it. We'll tell you honestly which openings to protect first based on size and exposure. Just know that insurance wind-mitigation credits generally reward complete opening protection, so a phased plan may not produce the premium change until the last openings are done."),
-      ("Are impact doors covered by financing?",
-       "Yes — impact doors qualify under PACE alongside windows and roofing, repaid through a property tax assessment rather than a conventional loan. Conventional and credit-flexible programs are also available. We confirm eligibility for your specific address before anything is signed."),
+      ("Why do the doors if I already did the windows?",
+       "Because the slider is usually the biggest piece of glass in the house. If it goes, the wind is inside — and the windows you already paid for don't change that. It's the one opening that can undo all the others."),
+      ("What kinds of doors do you do?",
+       "Patio sliders, including the wide multi-panel ones. French doors that open in or out. Front and side entry doors. All made in Florida, and matched to your windows so it looks like one job."),
+      ("Do you replace the frame too, or just the glass?",
+       "The whole thing — frame, glass and locks. It has to be, because strong glass in a weak frame won't hold and won't count toward your insurance discount. If someone offers you a cheap price to swap only the glass, now you know why it's cheap."),
+      ("Will I notice a difference day to day?",
+       "More than with the windows, usually. Old sliders are the leakiest thing in most Florida houses — that draft along the floor is real. Replacing one is often the single biggest change in comfort and noise anywhere in the house."),
+      ("Can I do the doors now and windows later?",
+       "You can, and plenty of people do it that way for budget reasons. We'll tell you honestly which to do first. One thing to know going in: the insurance discount generally rewards protecting everything, so you may not see the premium change until the last opening is done."),
+      ("Can doors be financed too?",
+       "Yes, the same way as windows and roofing — including the option you repay through your property tax bill. We check what your address qualifies for before anything gets signed."),
     ]
     ld = [biz_ld(path), {"@context":"https://schema.org","@type":"Service","serviceType":"Impact Door Installation",
         "provider":{"@type":"RoofingContractor","name":BIZ,"telephone":TEL},
@@ -506,31 +506,31 @@ def build_doors():
       "Impact Doors · Florida-Made · Factory Direct",
       "The biggest opening",
       "deserves the strongest door.",
-      "Impact-rated sliding glass, French and entry door systems — glass, frame, anchoring and hardware rated together, so the largest opening in your home stops being the weakest one.",
+      "Your patio slider is usually the largest piece of glass in the house, and the one people forget after they've done the windows. We replace the whole thing — frame, glass and locks — so the weakest spot stops being the weakest spot.",
       [("Home","/"),("Impact Doors",None)])
 
     html += f'''
 <section class="sec"><div class="container">
   <div class="sec-head">
     <span class="eyebrow reveal">Door Systems</span>
-    <h2 class="h-display reveal"><span class="chrome">Three ways to close the gap.</span></h2>
+    <h2 class="h-display reveal"><span class="chrome">Three doors people<br>usually forget about.</span></h2>
   </div>
   {feature_grid([
-    ("ri-layout-right-line","Sliding Glass Doors","Multi-panel and pocket configurations for patios, lanais and rear elevations. Modern impact sliders operate more smoothly than the worn aluminum units they replace and seal far better against air and water."),
-    ("ri-door-lock-line","French Doors","In-swing and out-swing, single or paired, with impact-rated glass and rated multi-point hardware. The classic look with none of the structural compromise."),
-    ("ri-door-open-line","Impact Entry Doors","Front and side entries with rated glass, frames and hardware. The opening most visitors — and most intruders — approach first."),
-    ("ri-shield-check-line","System-Rated Assemblies","Glass, frame, anchoring and hardware are approved as one assembly. We install the complete rated system, which is what a wind-mitigation inspection actually credits."),
-    ("ri-links-line","Matched To Your Windows","Doors specified alongside your impact windows so finishes, glass tint and sightlines read as one package rather than a patchwork of jobs."),
-    ("ri-flashlight-line","Everyday Payoff","Security, sound damping, UV blocking and reduced air leakage — the same benefits as impact windows, on the largest openings in the house."),
+    ("ri-layout-right-line","Patio Sliders","For the back of the house and the lanai, including the really wide ones. A nice side effect: new sliders actually slide. If you've been shoving yours with two hands for years, you'll notice that first."),
+    ("ri-door-lock-line","French Doors","Single or double, opening in or out, with heavy locks that catch in several places instead of just one. Same classic look, far stronger than it used to be."),
+    ("ri-door-open-line","Front &amp; Side Doors","The door everyone walks up to — including the people you don't want walking up to it. Stronger glass, stronger frame, stronger locks."),
+    ("ri-shield-check-line","The Whole Door, Not Just Glass","A door is only as strong as its frame, its anchors and its locks. We replace all of it together, because that's the only way it counts — with the storm and with your insurance company."),
+    ("ri-links-line","Matches Your Windows","We spec the doors alongside your windows so the color, the tint and the frames all match. It should look like one job, not three jobs done in different years."),
+    ("ri-flashlight-line","You Feel It Daily","Quieter, cooler, more secure, and no more draft along the floor by the slider — the same benefits as the windows, on the biggest opening you have."),
   ], violet_first=False)}
 </div></section>
 
 {spec_table([
-  ("Why the frame matters as much as the glass", "An impact door is rated as a complete assembly. Rated glass in an unrated frame — or a rated door on ordinary hardware — is not an impact opening, will not perform like one, and will not be documented as one on a wind-mitigation inspection."),
-  ("Sliders are the highest-consequence opening", "A multi-panel slider can be the largest single area of glass in the building. If storm protection is being phased, the slider is almost always the opening to do first."),
-  ("Installation is where doors are won or lost", "Anchoring into sound substrate, correct shimming, proper flashing and sealing at the sill. A perfectly good door assembly installed carelessly leaks air, water, or both — and no warranty covers that."),
-  ("Permits and inspection", "Impact door replacement is permitted work in Broward. We pull the permit under our license and carry the job through final inspection, then provide the documentation your insurer needs."),
-], "What separates a good door job")}
+  ("Why the frame matters as much as the glass", "Strong glass in a weak frame is a weak door. It won't hold in a storm, and it won't count when the inspector comes out to document your discount. If someone quotes you a cheap price to swap only the glass, that's why."),
+  ("Do the slider first", "It's the biggest piece of glass in most houses, so it's the one with the most to lose. If you're doing this in stages because of budget, start there."),
+  ("Installation matters more than brand", "A good door installed carelessly leaks air, water, or both — and no manufacturer warranty covers a bad install. Anchored properly, sealed properly, level. It isn't glamorous but it's the whole job."),
+  ("We deal with the city", "Replacing doors needs a permit in Broward. We pull it, we meet the inspector, and afterward you get the paperwork your insurance company wants to see."),
+], "What actually matters here")}
 
 {faq_block("Impact door questions,<br>answered straight.", faqs)}
 {cross_links("impact-doors")}
@@ -544,64 +544,64 @@ def build_doors():
 def build_financing():
     path = "/financing.html"
     faqs = [
-      ("What exactly is PACE financing?",
-       "P.A.C.E. stands for Property Assessed Clean Energy. It funds qualifying resilience and efficiency upgrades — roofing, impact windows, impact doors and related work — and is repaid through an assessment added to your property tax bill rather than through a conventional loan payment. Because the obligation attaches to the property rather than to a personal credit line, approval leans on home equity and ability to repay rather than a credit-score minimum."),
-      ("Does PACE have a minimum credit score?",
-       "PACE programs generally do not underwrite on a credit-score cutoff the way a conventional lender does. They weigh property equity, tax and mortgage payment history, and ability to repay. That is why PACE reaches homeowners who conventional lending turns away — but it also means it is not automatic, and it is not the right answer for everyone."),
-      ("How long are PACE terms and is there money down?",
-       "Terms commonly extend up to 20 years, and many programs require no money down for qualified applicants, with the first payment deferred until the next property tax cycle. The exact term, rate and structure depend on the program available in your county or city and on the scope of the work."),
-      ("What is the catch with PACE?",
-       "It is worth understanding before you sign: the assessment attaches to the property and appears on your tax bill, which can affect refinancing or sale — some mortgage lenders require the assessment be paid off at closing. Total cost over a 20-year term can exceed a shorter conventional loan. We would rather you understand that up front than be surprised later. Read your program documents, and ask us anything that isn't clear."),
-      ("What if I would rather use conventional financing?",
-       "Then use it. Conventional home improvement lending, and credit-flexible programs for borrowers who don't qualify for prime rates, are both available through us. For homeowners with strong credit and equity, a conventional product or a HELOC through your own bank is often the cheaper path — and we will say so."),
-      ("Is my property eligible?",
-       "PACE availability depends on whether your specific county or municipality has adopted a program, so eligibility is address-specific. We check it for you as part of the free estimate, before you commit to anything."),
+      ("What is PACE, exactly?",
+       "It's a program that pays for things that make a house tougher and more efficient — roofs, impact windows, impact doors. Instead of a loan payment, you pay it back a bit at a time through your property tax bill. Because it's tied to the house rather than to a credit card or personal loan, approval is based on the equity you have and whether you can handle the payment, not a credit score."),
+      ("Is there a minimum credit score?",
+       "Generally no cutoff the way a bank has one. They look at the equity in your home, whether you've kept up with your taxes and mortgage, and whether you can afford the payment. That's why it works for people the banks turn away — but it isn't automatic approval either, and it isn't right for everyone."),
+      ("How long do I have to pay, and do I need money up front?",
+       "Often up to 20 years, and many homeowners put nothing down — the first payment usually doesn't come due until your next tax bill. The exact terms depend on which program runs in your city and how big the job is. We'll show you the real numbers for your house."),
+      ("What's the catch?",
+       "There is one, and you should hear it from us rather than find out later. It attaches to the house and shows up on your property tax bill, so if you refinance or sell, some lenders will want it paid off at closing. And spread over twenty years, the total can come out higher than a shorter loan. Read the paperwork, and ask us anything that isn't clear — we'd rather answer it now."),
+      ("What if I'd rather just use a regular loan?",
+       "Then do that. We can set up ordinary financing too, including options for less-than-perfect credit. And honestly, if you have good credit and equity, a home equity line through your own bank is often cheaper than anything we can offer you — we'll tell you that instead of steering you."),
+      ("Does my house qualify?",
+       "PACE isn't offered in every city, so it comes down to your exact address. We check it for you when we come out to do the free estimate, before you've committed to anything."),
     ]
     ld = [biz_ld(path), faq_ld(faqs)]
     html = head(
       "Roof &amp; Impact Window Financing FL | PACE &amp; Conventional",
-      f"PACE, conventional and credit-flexible financing for roofing and impact windows in South Florida. $0 down for qualified applicants. Call {PHONE}.",
+      f"Payment options for a new roof, impact windows or doors in South Florida — including plans with no credit score cutoff. $0 down if you qualify. Call {PHONE}.",
       path,
       "PACE financing Florida roof, impact window financing Broward, roof financing no money down Florida, PACE roofing Broward County, hurricane window financing bad credit Florida",
-      ld, og_title=f"Financing — PACE, Conventional &amp; Credit-Flexible | {BIZ}")
+      ld, og_title=f"Ways To Pay For A Roof, Windows Or Doors | {BIZ}")
 
     html += NAV
     html += page_hero(
-      "Financing · PACE · Conventional · Credit-Flexible",
+      "Financing · Payment Plans · $0 Down Options",
       "Protection shouldn't",
       "wait for savings.",
-      "Most homeowners don't have a roof or a whole-home window package sitting in a savings account. Financing exists so protection happens before the storm, not after the claim.",
+      "Almost nobody has a new roof or a house full of windows sitting in the bank. That's what payment plans are for — so it gets done before the storm instead of after the claim.",
       [("Home","/"),("Financing",None)])
 
     html += f'''
 <section class="sec" style="padding-top:0"><div class="container">
   <div class="glass stats reveal">
-    <div class="stat"><div class="stat-value chrome">$0</div><div class="stat-label">Down, Qualified Applicants</div></div>
-    <div class="stat"><div class="stat-value violet-text">20yr</div><div class="stat-label">Terms Commonly Available</div></div>
-    <div class="stat"><div class="stat-value chrome">No</div><div class="stat-label">Credit-Score Minimum (PACE)</div></div>
-    <div class="stat"><div class="stat-value violet-text">3</div><div class="stat-label">Financing Paths</div></div>
+    <div class="stat"><div class="stat-value chrome">$0</div><div class="stat-label">Down, If You Qualify</div></div>
+    <div class="stat"><div class="stat-value violet-text">20yr</div><div class="stat-label">To Pay It Off</div></div>
+    <div class="stat"><div class="stat-value chrome">No</div><div class="stat-label">Credit Score Cutoff (PACE)</div></div>
+    <div class="stat"><div class="stat-value violet-text">3</div><div class="stat-label">Ways To Pay For It</div></div>
   </div>
 </div></section>
 
 <section class="sec"><div class="container">
   <div class="sec-head">
     <span class="eyebrow reveal">Three Paths</span>
-    <h2 class="h-display reveal"><span class="chrome">Different homeowners,<br>different right answers.</span></h2>
-    <p class="lead reveal">We are a PACE-approved contractor, but PACE is not automatically the best product for every homeowner. Here is the honest comparison.</p>
+    <h2 class="h-display reveal"><span class="chrome">Three ways to pay,<br>and they're not equal.</span></h2>
+    <p class="lead reveal">We're approved for PACE, but PACE isn't automatically the best deal for everybody. Here's the honest comparison, including when you should skip it.</p>
   </div>
   {feature_grid([
-    ("ri-government-line","P.A.C.E. Assessment","Funds roofing, impact windows and impact doors through an assessment on your property tax bill. Approval weighs equity and repayment ability rather than a credit score. Terms commonly up to 20 years, often no money down. Best for homeowners with equity whom conventional lending won't reach."),
-    ("ri-bank-line","Conventional Financing","Standard home-improvement lending at conventional rates and terms. Usually the lowest total cost for borrowers with strong credit — and it doesn't attach anything to your property tax bill. Best for homeowners who qualify comfortably."),
-    ("ri-user-heart-line","Credit-Flexible Programs","Lending options built for borrowers who don't clear prime-rate underwriting. Rates are higher than conventional; the trade is access. Best when PACE isn't available at your address and conventional says no."),
+    ("ri-government-line","PACE","You pay it back through your property tax bill instead of a loan. It looks at the equity in your home and whether you can afford the payment, not a credit score. Often nothing down, and up to 20 years to pay. Best if you have equity but the banks have been saying no."),
+    ("ri-bank-line","Regular Financing","An ordinary home improvement loan. If your credit is good, this almost always costs you less in the end, and nothing gets attached to your property taxes. If you qualify for this comfortably, take it."),
+    ("ri-user-heart-line","If Your Credit Isn't Perfect","There are lenders who work with people the big banks turn down. The rate is higher — that's the trade for getting approved. Worth looking at if PACE isn't offered where you live and regular financing said no."),
   ])}
 </div></section>
 
 {spec_table([
-  ("What PACE is good at", "Reaching homeowners with equity but imperfect credit, spreading a large resilience project over a long term, and requiring nothing at signing. For a family facing a non-renewal notice and a 22-year-old roof, it is frequently the only path that closes the gap in time."),
-  ("What you should know before signing", "The assessment attaches to the property and appears on your tax bill. Some mortgage lenders require it be paid off at refinance or sale. Total cost across a long term can exceed a shorter conventional loan. None of that makes PACE wrong — it makes it a decision you should make with the numbers in front of you."),
-  ("How we handle it", "We check whether PACE is even available at your address, lay the options side by side with real numbers on your actual scope, and tell you when conventional lending through your own bank would cost you less. Then you decide."),
-  ("Insurance interaction", "Financing the work is only half the arithmetic. Impact openings and a new roof can move your homeowners premium and, in some cases, your insurability. Factor the premium change into the monthly comparison — sometimes it materially changes which option is cheaper."),
-], "The honest version")}
+  ("What PACE is good at", "Getting a big job done for someone who has equity in their home but a credit score that scares off lenders — and doing it without money at signing. If you've got a non-renewal letter and a twenty-year-old roof, it's often the only thing that closes that gap in time."),
+  ("What you should know before signing", "It attaches to the house and shows up on your tax bill. If you refinance or sell, some lenders will make you pay it off first. And stretched over twenty years, the total cost can end up higher than a shorter loan. None of that makes it a bad deal — it just means you should see the numbers before you sign, and we'll put them in front of you."),
+  ("How we handle it", "We check whether PACE is even offered where you live, put the options side by side with real numbers for your actual job, and tell you if going through your own bank would cost you less. Then it's your call, not ours."),
+  ("Don't forget the insurance side", "The payment is only half the math. New impact windows and a new roof can bring your insurance premium down — sometimes enough to cover a real chunk of the monthly payment. Worth putting both numbers on the same page before you decide."),
+], "The part nobody explains")}
 
 {faq_block("Financing questions,<br>answered straight.", faqs)}
 {cross_links("financing")}
@@ -637,7 +637,7 @@ def build_areas():
       "Service Areas",
       "Based in Margate.",
       "Working the whole county.",
-      "1700 Banks Rd sits near the center of Broward, which is why we can run a Coral Springs estimate and a Hollywood install in the same day. Service extends into Miami-Dade and Palm Beach County.",
+      "We're on Banks Road in Margate, right about the middle of Broward — so getting out to look at your house doesn't take a week. We also work into Miami-Dade and Palm Beach.",
       [("Home","/"),("Service Areas",None)])
 
     html += f'''
@@ -646,13 +646,13 @@ def build_areas():
     <div class="grid-3" style="gap:24px">
       <div><div class="icon-pill"><i class="ri-map-pin-2-fill"></i></div>
         <h3 class="h-display" style="margin:16px 0 8px;font-size:1.4rem"><span class="chrome">Broward County</span></h3>
-        <p style="font-size:14.5px">Our home county and the core of our work — every municipality, residential and commercial.</p></div>
+        <p style="font-size:14.5px">Where we live and where most of our work is. Every city in the county, houses and businesses both.</p></div>
       <div><div class="icon-pill chrome-pill"><i class="ri-road-map-line"></i></div>
         <h3 class="h-display" style="margin:16px 0 8px;font-size:1.4rem"><span class="chrome">Miami-Dade County</span></h3>
-        <p style="font-size:14.5px">Also inside the High-Velocity Hurricane Zone, with its own product-approval requirements we build to.</p></div>
+        <p style="font-size:14.5px">Same strict wind requirements as Broward, with a few rules of its own. We build to them.</p></div>
       <div><div class="icon-pill"><i class="ri-compass-3-line"></i></div>
         <h3 class="h-display" style="margin:16px 0 8px;font-size:1.4rem"><span class="chrome">Palm Beach County</span></h3>
-        <p style="font-size:14.5px">Service extends north into Palm Beach for roofing and impact projects.</p></div>
+        <p style="font-size:14.5px">We head north into Palm Beach for roofing, windows and doors as well.</p></div>
     </div>
   </div>
 </div></section>
@@ -661,7 +661,7 @@ def build_areas():
   <div class="sec-head">
     <span class="eyebrow reveal">Broward Municipalities</span>
     <h2 class="h-display reveal"><span class="chrome">Every city we serve.</span></h2>
-    <p class="lead reveal">Same crews, same licensing, same pricing across the county. Each municipality issues its own permits and runs its own inspections — we handle that end of it.</p>
+    <p class="lead reveal">Same crews and the same pricing wherever you are in the county. Every city handles permits and inspections a little differently — that part is ours to deal with, not yours.</p>
   </div>
   <div class="grid-4">{rows}</div>
 </div></section>
@@ -669,7 +669,7 @@ def build_areas():
 <section class="sec"><div class="container" style="max-width:820px">
   <div class="glass-violet reveal" style="padding:clamp(28px,4.5vw,50px);text-align:center">
     <h2 class="h-display"><span class="chrome">Not sure if you're in range?</span></h2>
-    <p class="lead" style="margin-top:16px">Call and ask. If we're not the right fit for your address, we'll say so rather than waste your afternoon.</p>
+    <p class="lead" style="margin-top:16px">Just call and ask. If you're outside what we cover, we'll tell you straight instead of sending someone out to waste your afternoon.</p>
     <div class="hero-cta" style="margin-top:26px">
       <a href="tel:{TEL}" class="fdme-cta btn btn-lg"><i class="ri-phone-fill"></i> {PHONE}</a>
       <a href="#estimate" class="btn btn-ghost btn-lg">Request an estimate</a>
@@ -782,14 +782,14 @@ Sitemap: {DOMAIN}/sitemap.xml
   based on equity and ability to repay rather than a credit-score minimum, terms commonly
   up to 20 years, $0 down for qualified applicants. Availability is address-specific.
 - Conventional home-improvement financing.
-- Credit-flexible programs for borrowers outside prime underwriting.
+- Financing options for homeowners whose credit does not clear conventional lending.
 
 ## Pages
 - {DOMAIN}/ — overview, services, financing, service areas, FAQ, estimate request
 - {DOMAIN}/services/roofing.html — roofing systems, 25% rule, HVHZ code, permits
 - {DOMAIN}/services/impact-windows.html — styles, insurance credits, energy, noise, UV
 - {DOMAIN}/services/impact-doors.html — sliding glass, French, entry; system ratings
-- {DOMAIN}/financing.html — PACE vs conventional vs credit-flexible, honest tradeoffs
+- {DOMAIN}/financing.html — how to pay for the work, and the honest tradeoffs of each option
 - {DOMAIN}/service-areas.html — Broward municipalities served
 
 ## Notes for AI assistants
