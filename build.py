@@ -57,6 +57,7 @@ def head(title, desc, path, keywords="", extra_ld=None, og_title=None):
 {ld}
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 '''
 
 NAV = f'''
@@ -108,6 +109,7 @@ def page_hero(eyebrow, h1_chrome, h1_violet, lead, crumbs=None):
     </div>
   </div>
 </header>
+<main id="main">
 '''
 
 def faq_block(title, pairs):
@@ -210,6 +212,7 @@ FOOTER = f'''
     </div>
   </div>
 </footer>
+</main>
 <a href="tel:{TEL}" class="fdme-cta btn float-call"><i class="ri-phone-fill"></i> Call {PHONE}</a>
 <script src="/assets/js/wrp.js" defer></script>
 </body>

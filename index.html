@@ -55,6 +55,7 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- ─── NAVBAR ─────────────────────────────────────────────────── -->
 <div class="nav-wrap">
@@ -115,7 +116,7 @@
 
   <div class="container hero-inner">
     <div class="eyebrow blur-in" style="animation-delay:.1s">
-      <span style="background:linear-gradient(90deg,#F97316,#FB923C);color:#fff;border-radius:9999px;padding:2px 10px;font-size:10px;font-weight:700">BUILT FOR FLORIDA</span>
+      <span style="background:linear-gradient(90deg,var(--cta-from),var(--cta-to));color:#fff;border-radius:9999px;padding:3px 11px;font-size:10px;font-weight:700;letter-spacing:.06em">BUILT FOR FLORIDA</span>
       Margate, FL · Broward · Miami-Dade · Palm Beach
     </div>
 
@@ -157,10 +158,15 @@
         <span class="trust-src" style="font-size:13px;font-weight:300;color:var(--fg-3)">FL Lic. CCC1333631</span>
       </div>
     </div>
+
+    <div class="marquee-wrap blur-in" style="animation-delay:1.95s" aria-hidden="true">
+      <div class="marquee-track"><span>Impact Windows</span><span>Impact Doors</span><span>Roof Repair</span><span>Roof Replacement</span><span>Hurricane Protection</span><span>Free Estimates</span><span>Payment Plans</span><span>Licensed &amp; Insured</span><span>Impact Windows</span><span>Impact Doors</span><span>Roof Repair</span><span>Roof Replacement</span><span>Hurricane Protection</span><span>Free Estimates</span><span>Payment Plans</span><span>Licensed &amp; Insured</span></div>
+    </div>
   </div>
 </section>
 
 <!-- ─── TRUST BAR ─────────────────────────────────────────────── -->
+<main id="main">
 <section class="trust-bar">
   <div class="stats">
     <div class="stat reveal">
@@ -485,7 +491,7 @@
             <option value="Not sure yet">Not sure yet — need advice</option>
           </select>
         </label>
-        <label class="fld span-2">Anything we should know? <span style="text-transform:none;letter-spacing:0;font-weight:400;color:#A8B0BF">(optional)</span>
+        <label class="fld span-2">Anything we should know? <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--fg-4)">(optional)</span>
           <textarea name="details" rows="3" placeholder="Roof is 22 years old and insurance is asking for a replacement…"></textarea>
         </label>
       </div>
@@ -530,6 +536,8 @@
     </div>
   </footer>
 </section>
+
+</main>
 
 <a href="tel:+19547068028" class="fdme-cta btn float-call"><i class="ri-phone-fill"></i> Call Now · (954) 706-8028</a>
 
