@@ -35,7 +35,7 @@
   --border-2:#F3F4F6;
 
   --radius-lg:16px;
-  --radius-xl:24px;
+  --radius-xl:28px;
   --maxw:1152px;
 }
 
@@ -230,15 +230,17 @@ section{position:relative}
 .chip:hover{background:var(--violet-50);border-color:var(--violet-400);color:var(--violet-500)}
 
 /* form */
+#estimateForm{border-radius:34px!important}
 .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 label.fld{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-3)}
 .fld input,.fld select,.fld textarea{
-  width:100%;margin-top:7px;padding:12px 16px;border:1px solid #E2E8F0;border-radius:12px;
+  width:100%;margin-top:7px;padding:13px 18px;border:1px solid #E2E8F0;border-radius:16px;
   background:rgba(255,255,255,.85);font-family:'Barlow',sans-serif;font-size:15px;color:var(--fg-2);
   transition:all .2s ease;
 }
 .fld input::placeholder,.fld textarea::placeholder{color:#A8B0BF}
 .fld input:focus,.fld select:focus,.fld textarea:focus{background:#fff}
+.fld textarea{resize:vertical;min-height:96px}
 .span-2{grid-column:1 / -1}
 .form-note{margin-top:14px;font-size:13px;color:var(--fg-3)}
 
@@ -281,6 +283,7 @@ label.fld{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text
   .svc-num{font-size:3.4rem}
   .check-list{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
+  #estimateForm{border-radius:26px!important}
   .nav-logo img{width:142px}
   .footer-grid{grid-template-columns:1fr}
   .footer-logo img{width:210px}
