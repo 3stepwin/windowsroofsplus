@@ -105,17 +105,23 @@ before the notification step. Nothing else changes.
 
 ## Brand assets
 
-`assets/brand/wrp-logo.png` is the master logo (1536×1024). The rest are derived:
+`assets/brand/wrp-logo-transparent.png` is the master (1722×832, alpha). It was made
+from the flat-white-background artwork by flood-filling near-white **inward from the
+image borders** rather than keying white globally — the logo's own white keylines around
+the WRP letters are interior, so a global key would have eaten them. Everything else is
+derived from that master:
 
 | File | Use |
 |---|---|
-| `wrp-nav.webp` | nav + footer lockup, composited onto a rounded dark plate so the dark logo art reads as a deliberate badge on the white page |
-| `hero-bg.jpg` | hero background — the architectural scene lifted from the logo art, standing in for Speedy's hero video until WRP has real footage |
-| `wrp-mark.webp` | hero mark, full lockup including *Built for Florida*, same rounded-plate treatment |
-| `wrp-social-share.jpg` | 1200×630 Open Graph card (white ground) |
-| `wrp-icon.png` / `apple-touch-icon.png` | favicon + iOS home screen |
+| `wrp-nav.webp/.png` | nav lockup — WRP badge + WINDOWS ROOFS PLUS, above the first divider rule |
+| `wrp-mark.webp/.png` | footer + schema logo — the complete lockup including *Built for Florida* |
+| `wrp-social-share.jpg` | 1200×630 Open Graph card, full lockup on white |
+| `wrp-icon.png` / `apple-touch-icon.png` | favicon + iOS home screen — WRP monogram squared on white |
+| `hero-bg.jpg` | hero background, from `wrp-logo-original-dark.png` (the earlier dark logo art), standing in for Speedy's hero video until WRP has real footage |
+| `wrp-logo-original-dark.png` | the previous dark-background logo, kept only as the source for `hero-bg.jpg` |
 
-Regenerate them from the master with the Pillow snippet in the commit that added them.
+Because the art is transparent, the nav and footer marks carry no plate or shadow — the
+nav pill is a plain `.glass` surface from the design system.
 
 ## Company facts used on the site
 

@@ -61,9 +61,9 @@ def head(title, desc, path, keywords="", extra_ld=None, og_title=None):
 
 NAV = f'''
 <div class="nav-wrap">
-  <nav class="nav">
+  <nav class="nav glass">
     <a href="/" class="nav-logo" aria-label="{BIZ} home">
-      <img src="/assets/brand/wrp-nav.webp" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="640" height="279">
+      <img src="/assets/brand/wrp-nav.webp" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="620" height="190">
     </a>
     <div class="nav-links">
       <a href="/services/roofing.html">Roofing</a>
@@ -75,7 +75,7 @@ NAV = f'''
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><i class="ri-menu-line"></i></button>
   </nav>
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu glass-strong" id="mobileMenu">
     <a href="/services/roofing.html">Roofing</a>
     <a href="/services/impact-windows.html">Impact Windows</a>
     <a href="/services/impact-doors.html">Impact Doors</a>
@@ -176,7 +176,7 @@ FOOTER = f'''
     <div class="glass round-2xl footer-inner">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo"><img src="/assets/brand/wrp-nav.webp" alt="{BIZ}" width="640" height="279"></div>
+          <div class="footer-logo"><img src="/assets/brand/wrp-mark.webp" alt="{BIZ}" width="900" height="435"></div>
           <p style="font-size:14.5px;font-weight:300;max-width:320px">Licensed South Florida roofing and impact window contractor. Protect · Enhance · Add Value — built for Florida.</p>
           <p style="font-size:12.5px;color:var(--muted);margin-top:14px">FL Certified Roofing Contractor <strong style="color:var(--ink-2)">{LIC}</strong><br>BBB Accredited · A+ Rating</p>
         </div>
@@ -219,7 +219,7 @@ FOOTER = f'''
 def biz_ld(path, extra=None):
     d = {"@context": "https://schema.org", "@type": ["RoofingContractor", "HomeAndConstructionBusiness"],
          "name": BIZ, "alternateName": "WRP", "url": DOMAIN + path, "telephone": TEL,
-         "logo": DOMAIN + "/assets/brand/wrp-logo.png",
+         "logo": DOMAIN + "/assets/brand/wrp-mark.png",
          "address": {"@type": "PostalAddress", "streetAddress": "1700 Banks Rd, Unit 50-B",
                      "addressLocality": "Margate", "addressRegion": "FL",
                      "postalCode": "33063", "addressCountry": "US"},
