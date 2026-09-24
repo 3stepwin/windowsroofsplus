@@ -131,9 +131,18 @@ counts, prices, or years in business. If you change any of the below, grep for i
 - Phone: **(954) 706-8028** (matches the number on the existing site)
 - Address: 1700 Banks Rd, Unit 50-B, Margate, FL 33063
 - License: Florida Certified Roofing Contractor **CCC1333631**
-- BBB: Accredited since October 2022, A+ rating
-- Products manufactured in Florida, installed factory direct
-- Financing: P.A.C.E., conventional, credit-flexible programs
+- License: Broward County Structural Carpentry Specialty Contractor **21-CRP-22416-X** (Mike, 9/22/2026 email)
+- In business since **2013** (Mike: BBB shows 2013, the year of the name change); BBB A+
+- 5-star Google rating (Mike, 9/22/2026 email — no review count stated, so none shown)
+- Service area: **Jupiter to Miami** (Mike, 9/22/2026)
+- Windows & doors: "High impact rated" — NOT "Florida-made"; Mike uses multiple manufacturers. Do not name a manufacturer.
+- Crew: "installed by our own crew" — never "licensed local crew" (reads like subbing out)
+- Seamless gutters, 6-inch and 7-inch
+- Financing: Ygrene Certified (PACE, not based on credit score) and GoodLeap (conventional). PACE
+  programs have advertising rules — no $0-down / term-length claims until Mike's GoodLeap/Ygrene rep signs off.
+- Do not claim we do insurance paperwork for the homeowner (Mike: insurers are funny about that)
+- Logo: Mike's classic house logo (`assets/brand/wrp-logo-classic.svg`). The WRP badge art is on hold —
+  Mike doesn't want to change the logo yet because it's on everything he has.
 
 Warranty language is deliberately non-specific ("stated in your written contract")
 because the public warranty terms aren't documented. Tighten it once the real terms

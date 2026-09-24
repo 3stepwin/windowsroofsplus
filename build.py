@@ -16,6 +16,7 @@ PHONE  = "(954) 706-8028"
 TEL    = "+19547068028"
 BIZ    = "Windows Roofs Plus Inc."
 LIC    = "CCC1333631"
+LIC2   = "21-CRP-22416-X"  # Broward Structural Carpentry Specialty Contractor
 ADDR   = "1700 Banks Rd, Unit 50-B, Margate, FL 33063"
 TODAY  = datetime.date.today().isoformat()
 
@@ -64,7 +65,7 @@ NAV = f'''
 <div class="nav-wrap">
   <nav class="nav glass">
     <a href="/" class="nav-logo" aria-label="{BIZ} home">
-      <img src="/assets/brand/wrp-nav.webp" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="620" height="190">
+      <img src="/assets/brand/wrp-nav.webp" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="620" height="226">
     </a>
     <div class="nav-links">
       <a href="/services/roofing.html">Roofing</a>
@@ -178,9 +179,9 @@ FOOTER = f'''
     <div class="glass round-2xl footer-inner">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo"><img src="/assets/brand/wrp-mark.webp" alt="{BIZ}" width="900" height="435"></div>
-          <p style="font-size:14.5px;font-weight:300;max-width:320px">Licensed South Florida roofing and impact window contractor. Protect · Enhance · Add Value — built for Florida.</p>
-          <p style="font-size:12.5px;color:var(--muted);margin-top:14px">FL Certified Roofing Contractor <strong style="color:var(--ink-2)">{LIC}</strong><br>BBB Accredited · A+ Rating</p>
+          <div class="footer-logo"><img src="/assets/brand/wrp-mark.webp" alt="{BIZ}" width="900" height="328"></div>
+          <p style="font-size:14.5px;font-weight:300;max-width:320px">Licensed South Florida roofing, impact window and gutter contractor. In business since 2013. Protect · Enhance · Add Value — built for Florida.</p>
+          <p style="font-size:12.5px;color:var(--muted);margin-top:14px">FL Certified Roofing Contractor <strong style="color:var(--ink-2)">{LIC}</strong><br>Broward Structural Carpentry <strong style="color:var(--ink-2)">{LIC2}</strong><br>BBB Accredited · A+ Rating · 5★ Google</p>
         </div>
         <div>
           <h4>Services</h4>
@@ -188,6 +189,7 @@ FOOTER = f'''
             <li><a href="/services/roofing.html">Roofing</a></li>
             <li><a href="/services/impact-windows.html">Impact Windows</a></li>
             <li><a href="/services/impact-doors.html">Impact Doors</a></li>
+            <li><a href="/#services">Seamless Gutters</a></li>
             <li><a href="/financing.html">Financing &amp; PACE</a></li>
             <li><a href="/service-areas.html">Service Areas</a></li>
           </ul>
@@ -202,7 +204,7 @@ FOOTER = f'''
         </div>
         <div>
           <h4>Coverage</h4>
-          <ul><li>Broward County</li><li>Miami-Dade County</li><li>Palm Beach County</li><li>Residential &amp; Commercial</li></ul>
+          <ul><li>Jupiter to Miami</li><li>Palm Beach County</li><li>Broward County</li><li>Miami-Dade County</li><li>Residential &amp; Commercial</li></ul>
         </div>
       </div>
       <div class="footer-bottom">
@@ -227,7 +229,8 @@ def biz_ld(path, extra=None):
                      "addressLocality": "Margate", "addressRegion": "FL",
                      "postalCode": "33063", "addressCountry": "US"},
          "priceRange": "$$",
-         "hasCredential": f"Florida Certified Roofing Contractor {LIC}",
+         "hasCredential": [f"Florida Certified Roofing Contractor {LIC}", f"Broward County Structural Carpentry Specialty Contractor {LIC2}"],
+         "foundingDate": "2013",
          "areaServed": [{"@type": "AdministrativeArea", "name": n} for n in
                         ("Broward County, Florida", "Miami-Dade County, Florida", "Palm Beach County, Florida")]}
     if extra: d.update(extra)
@@ -284,11 +287,11 @@ def cross_links(current):
       "roofing": ("/services/roofing.html", "ri-home-4-fill", "Roofing",
                   "Shingle, tile, metal and flat — repairs, full replacements and new construction."),
       "impact-windows": ("/services/impact-windows.html", "ri-window-2-fill", "Impact Windows",
-                  "Florida-made hurricane glass, in every style and shape your house has."),
+                  "High impact rated hurricane glass, in every style and shape your house has."),
       "impact-doors": ("/services/impact-doors.html", "ri-door-open-fill", "Impact Doors",
                   "Patio sliders, French doors and entry doors built to take a hit."),
       "financing": ("/financing.html", "ri-bank-card-fill", "Financing &amp; PACE",
-                  "Payment plans, including options if your credit isn't perfect."),
+                  "Ygrene PACE and GoodLeap conventional financing."),
     }
     picks = [v for k, v in cards.items() if k != current][:3]
     inner = "".join(f'''<a href="{u}" class="glass card hover-lift reveal" style="display:block">
@@ -315,11 +318,11 @@ def build_roofing():
       ("Does South Florida have stricter roofing rules?",
        "Yes. Broward and Miami-Dade have the toughest building requirements in the country for wind — stricter materials, stricter fastening, stricter inspections than almost anywhere else. That's a good thing for you as a homeowner, and every roof we put on is permitted and inspected to those standards."),
       ("Can you help with a storm damage claim?",
-       "We photograph and document everything so your adjuster has what they need, and we fill out the form that can lower your premium. To be clear about what we are: we're roofers, not public adjusters. We record honestly what we find — your insurance company makes the decision."),
+       "We photograph and document what we find on your roof. To be clear about what we are: we're roofers, not public adjusters. We record honestly what we find — your insurance company makes the decision."),
       ("How many days will my house be torn up?",
        "Most homes are stripped and watertight again within a day or two, with the whole job usually running several days depending on size and whether there's wood to replace underneath. Tile takes longer than shingle. Rain and inspection scheduling can move things, and we'll tell you the moment they do."),
       ("Can I pay for a roof monthly?",
-       "Yes. There are programs built for exactly this — including one you repay through your property tax bill, which looks at your home's equity rather than a credit score cutoff. Regular financing is available too. We check what your address qualifies for and show you the real payment before you agree to anything."),
+       "Yes. We're Ygrene Certified for PACE financing, which isn't based on your credit score, and we offer conventional financing through GoodLeap. We check what your address qualifies for and show you the real payment before you agree to anything."),
     ]
     ld = [biz_ld(path), {"@context":"https://schema.org","@type":"Service","serviceType":"Roofing",
         "provider":{"@type":"RoofingContractor","name":BIZ,"telephone":TEL},
@@ -336,7 +339,7 @@ def build_roofing():
 
     html += NAV
     html += page_hero(
-      "Roofing · Broward · Miami-Dade · Palm Beach",
+      "Roofing · Jupiter to Miami",
       "Roofs built",
       "for Florida weather.",
       "Leaks, storm damage, or a roof that has simply reached the end of its life. Shingle, tile, metal and flat — we look at what you have, tell you straight whether it needs a repair or a replacement, and handle the permit with your city.",
@@ -371,7 +374,7 @@ def build_roofing():
 {spec_table([
   ("Why a patch can turn into a roof", "Florida has a rule: once repairs cover more than about a quarter of a section of roof within a year, that whole section has to be brought up to today's code. It catches a lot of homeowners by surprise mid-job. We tell you which side of that line you're on before anyone starts pulling shingles off."),
   ("The wood underneath", "On older homes there's often soft or rotted wood under the shingles that nobody sees until the roof comes off. We check for it and put it on the written estimate up front, so it isn't a phone call halfway through the job asking you for more money."),
-  ("We deal with the city, not you", "Every city in Broward runs its own permits and inspections, and they don't all move at the same speed. We pull the permit, meet the inspector, and hand you the paperwork your insurance company asks for afterward."),
+  ("We deal with the city, not you", "Every city in Broward runs its own permits and inspections, and they don't all move at the same speed. We pull the permit and meet the inspector, so you don't have to."),
   ("If your insurance sent you a letter", "A lot of our calls start with a renewal notice or a non-renewal letter about the age of the roof. Tell us that up front — it changes what actually solves your problem, and sometimes there's a deadline attached."),
 ], "What homeowners actually ask us")}
 
@@ -391,43 +394,43 @@ def build_windows():
        "Usually, yes. Protecting your windows and doors earns one of the bigger discounts Florida insurers give. Once the work is inspected, an inspector fills out a form your insurance company uses to apply it. How much depends on your policy and your roof, and covering every opening is worth more than covering some. We won't promise you a number we don't control."),
       ("How is this different from hurricane shutters?",
        "Somebody has to put shutters up. That means being home, being able to climb a ladder, and having the warning to do it — and then living in the dark until you take them down. Impact windows are just your windows. Nothing to store, nothing to install at the last minute, nothing to do if a storm forms while you're out of town. And they're working on the noise and your power bill the other 360 days."),
-      ("Are they made in Florida?",
-       "Yes, and they come to us straight from the factory. You wait less, they're built for our weather instead of a national one-size-fits-all spec, and there's nobody in the middle adding to your price."),
+      ("What windows do you use?",
+       "High impact rated windows. We work with more than one manufacturer, so we pick the right product for your house and your budget instead of forcing one brand on every job."),
       ("What styles can I get?",
        "Single-hung, which is the most common here. Sliders that go side to side. Casements that crank all the way open for a breeze. Big fixed picture windows, and arches or angled shapes if your house has them. Most homes end up with a mix, and we'll walk the house with you and work out what goes where."),
       ("Is the quieter-and-cooler part real, or just sales talk?",
        "It's real. The same layer inside the glass that stops debris also deadens sound, and it's obvious if you live near a road or under a flight path. And swapping out old single-pane aluminum windows takes a real load off your air conditioning in the summer. Neither is the reason people call us — but they're what people mention a year later."),
       ("How long does the whole thing take?",
-       "Most of the wait is at the factory, not at your house. Once everything's measured, permitted and built, a typical home takes one to three days depending on how many windows there are and whether there's stucco work around them. We give you a real date up front and tell you right away if it changes."),
+       "Most of the wait is on the window order, not at your house. Once everything's measured, permitted and built, a typical home takes one to three days depending on how many windows there are and whether there's stucco work around them. We give you a real date up front and tell you right away if it changes."),
       ("Can I pay monthly?",
-       "Yes. One option is repaid through your property tax bill and looks at your home's equity rather than a credit score cutoff. Regular financing is available too, including for people whose credit isn't perfect. We check what your address qualifies for and show you the actual payment first."),
+       "Yes. We're Ygrene Certified for PACE financing, which isn't based on your credit score, and we offer conventional financing through GoodLeap. We check what your address qualifies for and show you the actual payment first."),
     ]
     ld = [biz_ld(path), {"@context":"https://schema.org","@type":"Service","serviceType":"Impact Window Installation",
         "provider":{"@type":"RoofingContractor","name":BIZ,"telephone":TEL},
         "areaServed":{"@type":"AdministrativeArea","name":"Broward County, Florida"},
-        "description":"Hurricane-rated impact window installation across South Florida — single-hung, horizontal slider and XOX, casement, and architectural shapes. Florida-manufactured and installed factory direct."},
+        "description":"Hurricane-rated impact window installation across South Florida — single-hung, horizontal slider and XOX, casement, and architectural shapes. High impact rated, installed by our own crew."},
         faq_ld(faqs)]
 
     html = head(
       "Impact Windows Broward County FL | Hurricane-Rated Glass",
-      f"Florida-made hurricane impact windows installed factory direct across Broward County. Single-hung, slider, casement and custom shapes. Free estimate: {PHONE}.",
+      f"High impact rated hurricane windows installed by our own crew from Jupiter to Miami. Single-hung, slider, casement and custom shapes. Free estimate: {PHONE}.",
       path,
       "impact windows Broward County, hurricane windows Fort Lauderdale, impact windows Coral Springs, single hung impact window Margate, hurricane impact glass South Florida, impact window financing PACE",
-      ld, og_title=f"Impact Windows — Florida-Made, Factory Direct | {BIZ}")
+      ld, og_title=f"Impact Windows — High Impact Rated | {BIZ}")
 
     html += NAV
     html += page_hero(
-      "Impact Windows · Florida-Made · Factory Direct",
+      "Impact Windows · High Impact Rated · Jupiter to Miami",
       "Glass that holds",
       "when the wind doesn't.",
-      "Windows built to take a hit from whatever the storm throws at them — and in the meantime, a quieter house, lower power bills, and floors that stop fading. Made in Florida, installed by our own crew.",
+      "Windows built to take a hit from whatever the storm throws at them — and in the meantime, a quieter house, lower power bills, and floors that stop fading. High impact rated, installed by our own crew.",
       [("Home","/"),("Impact Windows",None)])
 
     html += f'''
 <section class="sec" style="padding-top:0"><div class="container">
   <div class="glass stats reveal">
     <div class="stat"><div class="stat-value chrome">365</div><div class="stat-label">Days A Year You Benefit</div></div>
-    <div class="stat"><div class="stat-value violet-text">FL</div><div class="stat-label">Made Here In Florida</div></div>
+    <div class="stat"><div class="stat-value violet-text">2013</div><div class="stat-label">In Business Since</div></div>
     <div class="stat"><div class="stat-value chrome">0</div><div class="stat-label">Shutters To Put Up</div></div>
     <div class="stat"><div class="stat-value violet-text">$0</div><div class="stat-label">Estimate Cost</div></div>
   </div>
@@ -445,7 +448,7 @@ def build_windows():
     ("ri-volume-down-line","A Quieter House","If you live near a busy road, a school, or under a flight path, this is the one people notice first. Close the window and the outside gets a lot further away."),
     ("ri-temp-cold-line","Cooler In Summer","Old single-pane windows let the heat pour in and the cold air you paid for leak out. New ones mean the A/C runs less, the house stays evenly cool, and the August bill stops being a shock."),
     ("ri-sun-cloudy-line","Your Floors Stop Fading","Impact glass blocks most of the sunlight that bleaches wood floors, rugs and furniture on the sunny side of the house. If you've got a faded stripe across the living room, that's what did it."),
-    ("ri-money-dollar-circle-line","A Discount On Your Policy","Protecting your windows and doors earns one of the bigger discounts Florida insurers offer. Once the work passes inspection, we make sure your insurance company gets the paperwork proving it."),
+    ("ri-money-dollar-circle-line","A Discount On Your Policy","Protecting your windows and doors earns one of the bigger discounts Florida insurers offer. Ask your insurance agent how much it could take off your premium."),
   ], violet_first=True)}
 </div></section>
 
@@ -481,7 +484,7 @@ def build_doors():
       ("Why do the doors if I already did the windows?",
        "Because the slider is usually the biggest piece of glass in the house. If it goes, the wind is inside — and the windows you already paid for don't change that. It's the one opening that can undo all the others."),
       ("What kinds of doors do you do?",
-       "Patio sliders, including the wide multi-panel ones. French doors that open in or out. Front and side entry doors. All made in Florida, and matched to your windows so it looks like one job."),
+       "Patio sliders, including the wide multi-panel ones. French doors that open in or out. Front and side entry doors. All high impact rated, and matched to your windows so it looks like one job."),
       ("Do you replace the frame too, or just the glass?",
        "The whole thing — frame, glass and locks. It has to be, because strong glass in a weak frame won't hold and won't count toward your insurance discount. If someone offers you a cheap price to swap only the glass, now you know why it's cheap."),
       ("Will I notice a difference day to day?",
@@ -494,19 +497,19 @@ def build_doors():
     ld = [biz_ld(path), {"@context":"https://schema.org","@type":"Service","serviceType":"Impact Door Installation",
         "provider":{"@type":"RoofingContractor","name":BIZ,"telephone":TEL},
         "areaServed":{"@type":"AdministrativeArea","name":"Broward County, Florida"},
-        "description":"Hurricane-rated impact door installation across South Florida — sliding glass, French and entry doors, Florida-manufactured and installed factory direct."},
+        "description":"Hurricane-rated impact door installation across South Florida — sliding glass, French and entry doors, high impact rated and installed by our own crew."},
         faq_ld(faqs)]
 
     html = head(
       "Impact Doors Broward County FL | Sliding, French &amp; Entry",
-      f"Hurricane-rated impact doors across Broward County — sliding glass, French and entry, Florida-made and factory direct. Free estimates. Call {PHONE}.",
+      f"Hurricane-rated impact doors from Jupiter to Miami — sliding glass, French and entry, high impact rated. Free estimates. Call {PHONE}.",
       path,
       "impact doors Broward County, impact sliding glass doors Fort Lauderdale, hurricane French doors South Florida, impact entry door Margate FL, impact door installation Coral Springs",
       ld, og_title=f"Impact Doors — Sliding Glass, French &amp; Entry | {BIZ}")
 
     html += NAV
     html += page_hero(
-      "Impact Doors · Florida-Made · Factory Direct",
+      "Impact Doors · High Impact Rated · Jupiter to Miami",
       "The biggest opening",
       "deserves the strongest door.",
       "Your patio slider is usually the largest piece of glass in the house, and the one people forget after they've done the windows. We replace the whole thing — frame, glass and locks — so the weakest spot stops being the weakest spot.",
@@ -532,7 +535,7 @@ def build_doors():
   ("Why the frame matters as much as the glass", "Strong glass in a weak frame is a weak door. It won't hold in a storm, and it won't count when the inspector comes out to document your discount. If someone quotes you a cheap price to swap only the glass, that's why."),
   ("Do the slider first", "It's the biggest piece of glass in most houses, so it's the one with the most to lose. If you're doing this in stages because of budget, start there."),
   ("Installation matters more than brand", "A good door installed carelessly leaks air, water, or both — and no manufacturer warranty covers a bad install. Anchored properly, sealed properly, level. It isn't glamorous but it's the whole job."),
-  ("We deal with the city", "Replacing doors needs a permit in Broward. We pull it, we meet the inspector, and afterward you get the paperwork your insurance company wants to see."),
+  ("We deal with the city", "Replacing doors needs a permit in Broward. We pull it and we meet the inspector — that part is on us, not you."),
 ], "What actually matters here")}
 
 {faq_block("Impact door questions,<br>answered straight.", faqs)}
@@ -547,64 +550,51 @@ def build_doors():
 def build_financing():
     path = "/financing.html"
     faqs = [
-      ("What is PACE, exactly?",
-       "It's a program that pays for things that make a house tougher and more efficient — roofs, impact windows, impact doors. Instead of a loan payment, you pay it back a bit at a time through your property tax bill. Because it's tied to the house rather than to a credit card or personal loan, approval is based on the equity you have and whether you can handle the payment, not a credit score."),
-      ("Is there a minimum credit score?",
-       "Generally no cutoff the way a bank has one. They look at the equity in your home, whether you've kept up with your taxes and mortgage, and whether you can afford the payment. That's why it works for people the banks turn away — but it isn't automatic approval either, and it isn't right for everyone."),
-      ("How long do I have to pay, and do I need money up front?",
-       "Often up to 20 years, and many homeowners put nothing down — the first payment usually doesn't come due until your next tax bill. The exact terms depend on which program runs in your city and how big the job is. We'll show you the real numbers for your house."),
-      ("What's the catch?",
-       "There is one, and you should hear it from us rather than find out later. It attaches to the house and shows up on your property tax bill, so if you refinance or sell, some lenders will want it paid off at closing. And spread over twenty years, the total can come out higher than a shorter loan. Read the paperwork, and ask us anything that isn't clear — we'd rather answer it now."),
-      ("What if I'd rather just use a regular loan?",
-       "Then do that. We can set up ordinary financing too, including options for less-than-perfect credit. And honestly, if you have good credit and equity, a home equity line through your own bank is often cheaper than anything we can offer you — we'll tell you that instead of steering you."),
+      ("What financing do you offer?",
+       "Two options. We're Ygrene Certified for PACE financing, and we offer conventional financing through GoodLeap. We'll go over both with you at the free estimate."),
+      ("What is PACE?",
+       "PACE is a program that pays for improvements like a roof, impact windows or impact doors, and you pay it back through your property tax bill instead of a regular loan. PACE approval isn't based on your credit score."),
+      ("Is PACE right for everyone?",
+       "No. PACE attaches to the property and shows up on your tax bill, and every program has its own rules. We'll put the options side by side for your actual job so you can decide with the real numbers in front of you."),
       ("Does my house qualify?",
        "PACE isn't offered in every city, so it comes down to your exact address. We check it for you when we come out to do the free estimate, before you've committed to anything."),
     ]
     ld = [biz_ld(path), faq_ld(faqs)]
     html = head(
-      "Roof &amp; Impact Window Financing FL | PACE &amp; Conventional",
-      f"Payment options for a new roof, impact windows or doors in South Florida — including plans with no credit score cutoff. $0 down if you qualify. Call {PHONE}.",
+      "Roof &amp; Impact Window Financing FL | Ygrene PACE &amp; GoodLeap",
+      f"Financing for a new roof, impact windows or doors in South Florida — Ygrene Certified PACE, not based on credit score, and conventional financing through GoodLeap. Call {PHONE}.",
       path,
-      "PACE financing Florida roof, impact window financing Broward, roof financing no money down Florida, PACE roofing Broward County, hurricane window financing bad credit Florida",
-      ld, og_title=f"Ways To Pay For A Roof, Windows Or Doors | {BIZ}")
+      "PACE financing Florida roof, Ygrene PACE roofing, GoodLeap roof financing, impact window financing South Florida, PACE roofing Broward County",
+      ld, og_title=f"Financing For Your Roof, Windows Or Doors | {BIZ}")
 
     html += NAV
     html += page_hero(
-      "Financing · Payment Plans · $0 Down Options",
-      "Protection shouldn't",
-      "wait for savings.",
-      "Almost nobody has a new roof or a house full of windows sitting in the bank. That's what payment plans are for — so it gets done before the storm instead of after the claim.",
+      "Financing · Ygrene Certified · GoodLeap",
+      "Financing for your",
+      "roof, windows &amp; doors.",
+      "Almost nobody has a new roof or a house full of windows sitting in the bank. We offer Ygrene PACE financing and conventional financing through GoodLeap, and we'll walk you through what you qualify for.",
       [("Home","/"),("Financing",None)])
 
     html += f'''
 <section class="sec" style="padding-top:0"><div class="container">
-  <div class="glass stats reveal">
-    <div class="stat"><div class="stat-value chrome">$0</div><div class="stat-label">Down, If You Qualify</div></div>
-    <div class="stat"><div class="stat-value violet-text">20yr</div><div class="stat-label">To Pay It Off</div></div>
-    <div class="stat"><div class="stat-value chrome">No</div><div class="stat-label">Credit Score Cutoff (PACE)</div></div>
-    <div class="stat"><div class="stat-value violet-text">3</div><div class="stat-label">Ways To Pay For It</div></div>
+  <div class="grid-2" style="gap:24px">
+    <div class="glass card reveal" style="padding:clamp(24px,3.5vw,40px);text-align:center">
+      <img src="/assets/brand/partner-ygrene.webp" alt="Ygrene Certified — 100% Financing" width="386" height="188" loading="lazy" style="width:100%;max-width:300px;margin:0 auto 16px;border-radius:12px">
+      <h3 class="h-display" style="font-size:1.6rem;margin-bottom:10px"><span class="chrome">Ygrene PACE</span></h3>
+      <p style="font-size:15px">We're Ygrene Certified. PACE is repaid through your property tax bill, and approval isn't based on your credit score.</p>
+    </div>
+    <div class="glass card reveal" style="padding:clamp(24px,3.5vw,40px);text-align:center">
+      <img src="/assets/brand/partner-goodleap.webp" alt="GoodLeap" width="515" height="220" loading="lazy" style="width:100%;max-width:300px;margin:0 auto 16px;border-radius:12px">
+      <h3 class="h-display" style="font-size:1.6rem;margin-bottom:10px"><span class="chrome">GoodLeap</span></h3>
+      <p style="font-size:15px">Conventional financing for your roof, impact windows and impact doors.</p>
+    </div>
   </div>
-</div></section>
-
-<section class="sec"><div class="container">
-  <div class="sec-head">
-    <span class="eyebrow reveal">Three Paths</span>
-    <h2 class="h-display reveal"><span class="chrome">Three ways to pay,<br>and they're not equal.</span></h2>
-    <p class="lead reveal">We're approved for PACE, but PACE isn't automatically the best deal for everybody. Here's the honest comparison, including when you should skip it.</p>
-  </div>
-  {feature_grid([
-    ("ri-government-line","PACE","You pay it back through your property tax bill instead of a loan. It looks at the equity in your home and whether you can afford the payment, not a credit score. Often nothing down, and up to 20 years to pay. Best if you have equity but the banks have been saying no."),
-    ("ri-bank-line","Regular Financing","An ordinary home improvement loan. If your credit is good, this almost always costs you less in the end, and nothing gets attached to your property taxes. If you qualify for this comfortably, take it."),
-    ("ri-user-heart-line","If Your Credit Isn't Perfect","There are lenders who work with people the big banks turn down. The rate is higher — that's the trade for getting approved. Worth looking at if PACE isn't offered where you live and regular financing said no."),
-  ])}
 </div></section>
 
 {spec_table([
-  ("What PACE is good at", "Getting a big job done for someone who has equity in their home but a credit score that scares off lenders — and doing it without money at signing. If you've got a non-renewal letter and a twenty-year-old roof, it's often the only thing that closes that gap in time."),
-  ("What you should know before signing", "It attaches to the house and shows up on your tax bill. If you refinance or sell, some lenders will make you pay it off first. And stretched over twenty years, the total cost can end up higher than a shorter loan. None of that makes it a bad deal — it just means you should see the numbers before you sign, and we'll put them in front of you."),
-  ("How we handle it", "We check whether PACE is even offered where you live, put the options side by side with real numbers for your actual job, and tell you if going through your own bank would cost you less. Then it's your call, not ours."),
-  ("Don't forget the insurance side", "The payment is only half the math. New impact windows and a new roof can bring your insurance premium down — sometimes enough to cover a real chunk of the monthly payment. Worth putting both numbers on the same page before you decide."),
-], "The part nobody explains")}
+  ("How we handle it", "We check what's offered at your address, put the options side by side with real numbers for your actual job, and answer your questions. Then it's your call, not ours."),
+  ("Every program has its own rules", "PACE and conventional financing each have their own requirements and terms. We'll go over them with you before you sign anything."),
+], "How it works")}
 
 {faq_block("Financing questions,<br>answered straight.", faqs)}
 {cross_links("financing")}
@@ -629,8 +619,8 @@ def build_areas():
 
     ld = [biz_ld(path, {"areaServed": [{"@type": "City", "name": n + ", FL"} for n, _ in CITIES]})]
     html = head(
-      "Service Areas | Broward, Miami-Dade &amp; Palm Beach FL",
-      f"Windows Roofs Plus serves all of Broward plus Miami-Dade and Palm Beach — Fort Lauderdale, Coral Springs, Pompano Beach, Hollywood and more. {PHONE}.",
+      "Service Areas | Jupiter to Miami — Palm Beach, Broward &amp; Miami-Dade",
+      f"Windows Roofs Plus works from Jupiter to Miami — Palm Beach, Broward and Miami-Dade, including Fort Lauderdale, Coral Springs, Pompano Beach, Hollywood and more. {PHONE}.",
       path,
       "roofing contractor Broward County service area, impact windows Fort Lauderdale, impact windows Coral Springs, roofer Pompano Beach, impact doors Hollywood FL",
       ld)
@@ -639,8 +629,8 @@ def build_areas():
     html += page_hero(
       "Service Areas",
       "Based in Margate.",
-      "Working the whole county.",
-      "We're on Banks Road in Margate, right about the middle of Broward — so getting out to look at your house doesn't take a week. We also work into Miami-Dade and Palm Beach.",
+      "Working Jupiter to Miami.",
+      "We're on Banks Road in Margate, right in the middle of it — and we work from Jupiter all the way down to Miami, across Palm Beach, Broward and Miami-Dade.",
       [("Home","/"),("Service Areas",None)])
 
     html += f'''
@@ -649,13 +639,13 @@ def build_areas():
     <div class="grid-3" style="gap:24px">
       <div><div class="icon-pill"><i class="ri-map-pin-2-fill"></i></div>
         <h3 class="h-display" style="margin:16px 0 8px;font-size:1.4rem"><span class="chrome">Broward County</span></h3>
-        <p style="font-size:14.5px">Where we live and where most of our work is. Every city in the county, houses and businesses both.</p></div>
+        <p style="font-size:14.5px">Where our shop is. Every city in the county, houses and businesses both.</p></div>
       <div><div class="icon-pill chrome-pill"><i class="ri-road-map-line"></i></div>
         <h3 class="h-display" style="margin:16px 0 8px;font-size:1.4rem"><span class="chrome">Miami-Dade County</span></h3>
-        <p style="font-size:14.5px">Same strict wind requirements as Broward, with a few rules of its own. We build to them.</p></div>
+        <p style="font-size:14.5px">All the way down to Miami. Same strict wind requirements as Broward, with a few rules of its own — we build to them.</p></div>
       <div><div class="icon-pill"><i class="ri-compass-3-line"></i></div>
         <h3 class="h-display" style="margin:16px 0 8px;font-size:1.4rem"><span class="chrome">Palm Beach County</span></h3>
-        <p style="font-size:14.5px">We head north into Palm Beach for roofing, windows and doors as well.</p></div>
+        <p style="font-size:14.5px">All the way up to Jupiter — roofing, windows, doors and gutters.</p></div>
     </div>
   </div>
 </div></section>
@@ -664,7 +654,7 @@ def build_areas():
   <div class="sec-head">
     <span class="eyebrow reveal">Broward Municipalities</span>
     <h2 class="h-display reveal"><span class="chrome">Every city we serve.</span></h2>
-    <p class="lead reveal">Same crews and the same pricing wherever you are in the county. Every city handles permits and inspections a little differently — that part is ours to deal with, not yours.</p>
+    <p class="lead reveal">Same crews wherever you are. Every city handles permits and inspections a little differently — that part is ours to deal with, not yours.</p>
   </div>
   <div class="grid-4">{rows}</div>
 </div></section>
@@ -760,8 +750,8 @@ Sitemap: {DOMAIN}/sitemap.xml
     write("/llms.txt", f"""# {BIZ}
 
 > Licensed South Florida exterior contractor specializing in roofing, impact windows,
-> and impact doors. Based in Margate, FL. Serving Broward County primarily, with service
-> into Miami-Dade and Palm Beach County.
+> impact doors and seamless gutters. Based in Margate, FL. In business since 2013.
+> Serving Jupiter to Miami (Palm Beach, Broward and Miami-Dade counties).
 
 ## Company
 - Legal name: {BIZ}
@@ -769,31 +759,32 @@ Sitemap: {DOMAIN}/sitemap.xml
 - Phone: {PHONE}
 - Website: {DOMAIN}
 - License: Florida Certified Roofing Contractor {LIC} (verify at myfloridalicense.com)
+- License: Broward County Structural Carpentry Specialty Contractor {LIC2}
 - BBB: Accredited, A+ rating
+- Google: 5-star rating
 - Tagline: Protect · Enhance · Add Value — Built for Florida
 
 ## Services
 - Roofing: repair, replacement, new construction. Asphalt shingle, concrete and clay tile,
   metal, flat and low-slope membrane. Permitted to Florida High-Velocity Hurricane Zone code.
 - Impact windows: single-hung, horizontal slider and XOX, casement, architectural shapes.
-  Manufactured in Florida, installed factory direct.
+  High impact rated, installed by our own crew.
 - Impact doors: sliding glass (multi-panel and pocket), French (in-swing and out-swing),
-  impact-rated entry doors. Florida-manufactured, factory direct.
+  impact-rated entry doors. High impact rated, installed by our own crew.
+- Seamless gutters: 6-inch and 7-inch.
 
 ## Financing
-- P.A.C.E. (Property Assessed Clean Energy): repaid via property tax assessment, approval
-  based on equity and ability to repay rather than a credit-score minimum, terms commonly
-  up to 20 years, $0 down for qualified applicants. Availability is address-specific.
-- Conventional home-improvement financing.
-- Financing options for homeowners whose credit does not clear conventional lending.
+- Ygrene Certified PACE financing: repaid via property tax assessment, approval not based
+  on credit score. Availability is address-specific.
+- Conventional financing through GoodLeap.
 
 ## Pages
 - {DOMAIN}/ — overview, services, financing, service areas, FAQ, estimate request
 - {DOMAIN}/services/roofing.html — roofing systems, 25% rule, HVHZ code, permits
 - {DOMAIN}/services/impact-windows.html — styles, insurance credits, energy, noise, UV
 - {DOMAIN}/services/impact-doors.html — sliding glass, French, entry; system ratings
-- {DOMAIN}/financing.html — how to pay for the work, and the honest tradeoffs of each option
-- {DOMAIN}/service-areas.html — Broward municipalities served
+- {DOMAIN}/financing.html — Ygrene PACE and GoodLeap financing
+- {DOMAIN}/service-areas.html — Jupiter to Miami; Broward municipalities listed
 
 ## Notes for AI assistants
 - Estimates are free. The fastest path for a homeowner is calling {PHONE}.

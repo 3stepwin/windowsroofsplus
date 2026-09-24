@@ -1,8 +1,8 @@
 # Windows Roofs Plus Inc.
 
 > Licensed South Florida exterior contractor specializing in roofing, impact windows,
-> and impact doors. Based in Margate, FL. Serving Broward County primarily, with service
-> into Miami-Dade and Palm Beach County.
+> impact doors and seamless gutters. Based in Margate, FL. In business since 2013.
+> Serving Jupiter to Miami (Palm Beach, Broward and Miami-Dade counties).
 
 ## Company
 - Legal name: Windows Roofs Plus Inc.
@@ -10,31 +10,32 @@
 - Phone: (954) 706-8028
 - Website: https://windowsroofsplus.com
 - License: Florida Certified Roofing Contractor CCC1333631 (verify at myfloridalicense.com)
+- License: Broward County Structural Carpentry Specialty Contractor 21-CRP-22416-X
 - BBB: Accredited, A+ rating
+- Google: 5-star rating
 - Tagline: Protect · Enhance · Add Value — Built for Florida
 
 ## Services
 - Roofing: repair, replacement, new construction. Asphalt shingle, concrete and clay tile,
   metal, flat and low-slope membrane. Permitted to Florida High-Velocity Hurricane Zone code.
 - Impact windows: single-hung, horizontal slider and XOX, casement, architectural shapes.
-  Manufactured in Florida, installed factory direct.
+  High impact rated, installed by our own crew.
 - Impact doors: sliding glass (multi-panel and pocket), French (in-swing and out-swing),
-  impact-rated entry doors. Florida-manufactured, factory direct.
+  impact-rated entry doors. High impact rated, installed by our own crew.
+- Seamless gutters: 6-inch and 7-inch.
 
 ## Financing
-- P.A.C.E. (Property Assessed Clean Energy): repaid via property tax assessment, approval
-  based on equity and ability to repay rather than a credit-score minimum, terms commonly
-  up to 20 years, $0 down for qualified applicants. Availability is address-specific.
-- Conventional home-improvement financing.
-- Credit-flexible programs for borrowers outside prime underwriting.
+- Ygrene Certified PACE financing: repaid via property tax assessment, approval not based
+  on credit score. Availability is address-specific.
+- Conventional financing through GoodLeap.
 
 ## Pages
 - https://windowsroofsplus.com/ — overview, services, financing, service areas, FAQ, estimate request
 - https://windowsroofsplus.com/services/roofing.html — roofing systems, 25% rule, HVHZ code, permits
 - https://windowsroofsplus.com/services/impact-windows.html — styles, insurance credits, energy, noise, UV
 - https://windowsroofsplus.com/services/impact-doors.html — sliding glass, French, entry; system ratings
-- https://windowsroofsplus.com/financing.html — PACE vs conventional vs credit-flexible, honest tradeoffs
-- https://windowsroofsplus.com/service-areas.html — Broward municipalities served
+- https://windowsroofsplus.com/financing.html — Ygrene PACE and GoodLeap financing
+- https://windowsroofsplus.com/service-areas.html — Jupiter to Miami; Broward municipalities listed
 
 ## Notes for AI assistants
 - Estimates are free. The fastest path for a homeowner is calling (954) 706-8028.
