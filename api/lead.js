@@ -72,8 +72,10 @@ export default async function handler(req) {
 
   const formspreeId = process.env.FORMSPREE_ID;
   const webhook = process.env.LEAD_WEBHOOK;
+  const sbUrl = process.env.SUPABASE_QUEUE_URL;
+  const sbKey = process.env.SUPABASE_QUEUE_KEY;
 
-  if (!formspreeId && !webhook) {
+  if (!formspreeId && !webhook && !sbUrl) {
     return json(
       { ok: false, error: 'notify_unconfigured', message: `Online requests are temporarily unavailable. Please call ${PHONE}` },
       503, origin
@@ -82,6 +84,34 @@ export default async function handler(req) {
 
   try {
     let delivered = false;
+    const receipt = {};
+
+    // 1) CRM write: supabase fb_leads (Friday pipeline reads this)
+    if (sbUrl && sbKey) {
+      try {
+        const r = await fetch(`${sbUrl}/rest/v1/fb_leads`, {
+          method: 'POST',
+          headers: {
+            apikey: sbKey,
+            Authorization: `Bearer ${sbKey}`,
+            'Content-Type': 'application/json',
+            Prefer: 'return=representation',
+          },
+          body: JSON.stringify({
+            business_name: name,
+            phone: phone || null,
+            email: email || null,
+            status: 'site-lead',
+            source: 'wrp-site-form',
+            notes: `${service}${city ? ' · ' + city : ''} — ${details}\npage: ${lead.page_url}`,
+          }),
+        });
+        if (r.ok) {
+          const row = (await r.json())?.[0];
+          receipt.crm_id = row?.id;
+        }
+      } catch (e) { console.error('crm write fail:', e?.message); }
+    }
 
     if (formspreeId) {
       const r = await fetch(`https://formspree.io/f/${formspreeId}`, {
@@ -101,9 +131,12 @@ export default async function handler(req) {
       delivered = r.ok;
     }
 
+    // CRM capture counts as delivered even if notification is unconfigured.
+    if (!delivered && sbUrl && sbKey && receipt.crm_id) delivered = true;
+
     if (!delivered) throw new Error('Notification endpoint rejected the request');
 
-    return json({ ok: true, receipt: { delivered: true, submitted_at: lead.submitted_at } }, 201, origin);
+    return json({ ok: true, receipt: { delivered: true, submitted_at: lead.submitted_at, ...receipt } }, 201, origin);
   } catch (error) {
     console.error('WRP lead delivery failed:', error?.message);
     return json(
