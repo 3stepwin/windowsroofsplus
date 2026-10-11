@@ -65,7 +65,7 @@ NAV = f'''
 <div class="nav-wrap">
   <nav class="nav glass">
     <a href="/" class="nav-logo" aria-label="{BIZ} home">
-      <img src="/assets/brand/wrp-nav.webp" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="620" height="226">
+      <img src="/assets/brand/wrp-logo-polished.svg" alt="{BIZ} — Roofing, Impact Windows, Impact Doors" width="828" height="328">
     </a>
     <div class="nav-links">
       <a href="/services/roofing.html">Roofing</a>
@@ -179,7 +179,7 @@ FOOTER = f'''
     <div class="glass round-2xl footer-inner">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo"><img src="/assets/brand/wrp-mark.webp" alt="{BIZ}" width="900" height="328"></div>
+          <div class="footer-logo"><img src="/assets/brand/wrp-logo-polished.svg" alt="{BIZ}" width="828" height="328"></div>
           <p style="font-size:14.5px;font-weight:300;max-width:320px">Licensed South Florida roofing, impact window and gutter contractor. In business since 2013. Protect · Enhance · Add Value — built for Florida.</p>
           <p style="font-size:12.5px;color:var(--muted);margin-top:14px">FL Certified Roofing Contractor <strong style="color:var(--ink-2)">{LIC}</strong><br>Broward Structural Carpentry <strong style="color:var(--ink-2)">{LIC2}</strong><br>BBB Accredited · A+ Rating · 5★ Google</p>
         </div>
@@ -224,7 +224,7 @@ FOOTER = f'''
 def biz_ld(path, extra=None):
     d = {"@context": "https://schema.org", "@type": ["RoofingContractor", "HomeAndConstructionBusiness"],
          "name": BIZ, "alternateName": "WRP", "url": DOMAIN + path, "telephone": TEL,
-         "logo": DOMAIN + "/assets/brand/wrp-mark.png",
+         "logo": DOMAIN + "/assets/brand/wrp-logo-polished.svg",
          "address": {"@type": "PostalAddress", "streetAddress": "1700 Banks Rd, Unit 50-B",
                      "addressLocality": "Margate", "addressRegion": "FL",
                      "postalCode": "33063", "addressCountry": "US"},
@@ -312,7 +312,7 @@ def build_roofing():
     path = "/services/roofing.html"
     faqs = [
       ("How do I know if I need a repair or a whole new roof?",
-       "It comes down to how much of the roof is affected, what shape the wood underneath is in, and how much life the roof has left. There's also a Florida rule that once repairs pass about a quarter of a section, that whole section has to be brought up to code. We look, we tell you in writing what we found and why, and you decide before anything comes off."),
+       "It comes down to how much of the roof is affected, what shape the wood underneath is in, and how much life the roof has left. Florida's 25% rule includes an exception for roofs or roof sections built, repaired or replaced to the 2007 Florida Building Code or a later edition, so the roof's code history matters too. We look, we tell you in writing what we found and why, and you decide before anything comes off."),
       ("What kinds of roof do you do?",
        "Shingle, tile, metal, and flat. Shingle is the most affordable and the most common. Tile looks classic and keeps the house cooler. Metal lasts the longest and handles wind the best but costs more up front. Flat roofing is for flat sections, additions and commercial buildings. We'll tell you which makes sense for your house and your budget."),
       ("Does South Florida have stricter roofing rules?",
@@ -372,7 +372,7 @@ def build_roofing():
 </div></section>
 
 {spec_table([
-  ("Why a patch can turn into a roof", "Florida has a rule: once repairs cover more than about a quarter of a section of roof within a year, that whole section has to be brought up to today's code. It catches a lot of homeowners by surprise mid-job. We tell you which side of that line you're on before anyone starts pulling shingles off."),
+  ("Why a patch can turn into a roof", "The repair area, roof condition and code history all affect the scope. Florida's 25% rule includes an exception for roofing systems or sections that comply with the 2007 Florida Building Code or a later edition. We check the applicable requirements and explain the work before anyone starts pulling shingles off."),
   ("The wood underneath", "On older homes there's often soft or rotted wood under the shingles that nobody sees until the roof comes off. We check for it and put it on the written estimate up front, so it isn't a phone call halfway through the job asking you for more money."),
   ("We deal with the city, not you", "Every city in Broward runs its own permits and inspections, and they don't all move at the same speed. We pull the permit and meet the inspector, so you don't have to."),
   ("If your insurance sent you a letter", "A lot of our calls start with a renewal notice or a non-renewal letter about the age of the roof. Tell us that up front — it changes what actually solves your problem, and sometimes there's a deadline attached."),

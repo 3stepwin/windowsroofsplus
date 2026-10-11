@@ -88,40 +88,24 @@ the list, the shell, and the sitemap writer are already in place.
 
 ## Lead capture
 
-`api/lead.js` currently runs in **notification-only** mode. Set one of these in the
-Vercel project's environment variables:
+`api/lead.js` stores estimate requests in the existing Supabase `fb_leads` table when `SUPABASE_QUEUE_URL` and `SUPABASE_QUEUE_KEY` are configured. Production metadata checked on 2026-10-11 shows these two variables only. No Formspree or notification webhook is configured. A successful CRM insert counts as delivered; it does not prove a notification reached Mike. Do not submit fake production leads to test it.
 
-| Var | Effect |
-|---|---|
-| `FORMSPREE_ID` | POSTs the lead to `https://formspree.io/f/<id>` |
-| `LEAD_WEBHOOK` | POSTs the raw JSON payload to that URL |
-
-With neither set the endpoint returns `503` and the form tells the visitor to call.
-
-A ready-to-fill GoHighLevel block is commented at the bottom of `api/lead.js`. To
-switch on CRM capture later: create the WRP sub-account, set `GHL_WRP_LOCATION_PIT`,
-`GHL_WRP_LOCATION_ID`, `GHL_WRP_PIPELINE_ID`, uncomment `sendToGHL()`, and call it
-before the notification step. Nothing else changes.
+Optional existing notification paths are `FORMSPREE_ID` and `LEAD_WEBHOOK`. With no usable delivery route the endpoint returns an error and the browser offers click-to-call. The unused GHL example is not active.
 
 ## Brand assets
 
-`assets/brand/wrp-logo-transparent.png` is the master (1722×832, alpha). It was made
-from the flat-white-background artwork by flood-filling near-white **inward from the
-image borders** rather than keying white globally — the logo's own white keylines around
-the WRP letters are interior, so a global key would have eaten them. Everything else is
-derived from that master:
+`assets/brand/wrp-logo-polished.svg` is the owner-approved October 11 candidate, used in every navigation/footer and structured-data logo. It preserves all 40 path attributes and colors of `wrp-logo-classic.svg`, with balanced clear space and scalable output. The original remains unchanged. Existing favicon and social-card art retain the same classic identity.
 
-| File | Use |
-|---|---|
-| `wrp-nav.webp/.png` | nav lockup — WRP badge + WINDOWS ROOFS PLUS, above the first divider rule |
-| `wrp-mark.webp/.png` | footer + schema logo — the complete lockup including *Built for Florida* |
-| `wrp-social-share.jpg` | 1200×630 Open Graph card, full lockup on white |
-| `wrp-icon.png` / `apple-touch-icon.png` | favicon + iOS home screen — WRP monogram squared on white |
-| `hero-bg.jpg` | hero background, from `wrp-logo-original-dark.png` (the earlier dark logo art), standing in for Speedy's hero video until WRP has real footage |
-| `wrp-logo-original-dark.png` | the previous dark-background logo, kept only as the source for `hero-bg.jpg` |
+Provenance distinction: the old domain still serves `https://windowsroofsplus.com/wp-content/uploads/2022/08/win-roof-logo.png`, which has the same purple-roof/gray-window icon but an uppercase “WINDOWS ROOFS PLUS INC.” wordmark. The repository classic vector and approved candidate use title-case “Windows Roofs Plus”. Do not claim exact wordmark parity with that older PNG. The prior dramatic WRP badge is obsolete.
 
-Because the art is transparent, the nav and footer marks carry no plate or shadow — the
-nav pill is a plain `.glass` surface from the design system.
+The homepage background remains the existing `hero-bg.jpg`; layout and design are unchanged.
+
+## October 11 launch checks
+
+- Logo approved before integration; DNS cutover remains separately held for mail-safe coordination.
+- Roof-copy correction source: https://www.flsenate.gov/Laws/Statutes/2025/553.844, subsection (5). The 25% rule has a code-history exception; avoid categorical replacement claims.
+- BBB accreditation and A+ were reconfirmed at https://www.bbb.org/us/fl/margate/profile/roofing-contractors/windows-roofs-plus-inc-0633-92024925. That profile lists incorporation in 2013 and business start in 2021; Mike's supplied since-2013 history remains subject to reconciliation.
+- Google rating, insurance, current license standing and financing eligibility need current supporting evidence before claiming a complete business-fact audit.
 
 ## Company facts used on the site
 

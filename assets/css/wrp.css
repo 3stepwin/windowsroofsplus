@@ -168,6 +168,7 @@ button[disabled],.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none!im
 .nav-logo img{width:148px}
 .nav-links{display:flex;align-items:center;gap:2px}
 .nav-links a{padding:8px 14px;font-size:14px;font-weight:500;color:var(--fg-3);border-radius:9999px;transition:color .2s}
+.nav-links a.fdme-cta{color:#fff}
 .nav-links a:hover{color:var(--violet-500)}
 .nav-toggle{display:none;background:none;border:none;color:var(--fg-1);font-size:24px;cursor:pointer;padding:6px 12px;line-height:1}
 .mobile-menu{display:none;max-width:var(--maxw);margin:10px auto 0;padding:12px;border-radius:20px!important}
@@ -327,9 +328,9 @@ label.fld{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text
   box-shadow:0 8px 32px -4px rgba(249,115,22,.55)}
 
 @media (prefers-reduced-motion:reduce){
-  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
-  .blur-word,.blur-in{opacity:1}
+  .blur-word,.blur-in{opacity:1;filter:none;transform:none}
 }
 
 /* responsive */

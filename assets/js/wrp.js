@@ -24,6 +24,14 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       toggle.innerHTML = open ? '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
     });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.innerHTML = '<i class="ri-menu-line"></i>';
+        toggle.focus();
+      }
+    });
     menu.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') {
         menu.classList.remove('open');
