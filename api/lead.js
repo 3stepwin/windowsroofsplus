@@ -12,7 +12,7 @@
 
 export const config = { runtime: 'edge' };
 
-const PHONE = '(954) 706-8028';
+const PHONE = '(954) 914-3586';
 
 function json(body, status = 200, origin = '*') {
   return new Response(JSON.stringify(body), {
