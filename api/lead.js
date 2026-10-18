@@ -74,8 +74,9 @@ export default async function handler(req) {
   const webhook = process.env.LEAD_WEBHOOK;
   const sbUrl = process.env.SUPABASE_QUEUE_URL;
   const sbKey = process.env.SUPABASE_QUEUE_KEY;
+  const votelKey = process.env.VOTEL_API_KEY;
 
-  if (!formspreeId && !webhook && !sbUrl) {
+  if (!formspreeId && !webhook && !sbUrl && !votelKey) {
     return json(
       { ok: false, error: 'notify_unconfigured', message: `Online requests are temporarily unavailable. Please call ${PHONE}` },
       503, origin
@@ -85,6 +86,33 @@ export default async function handler(req) {
   try {
     let delivered = false;
     const receipt = {};
+
+    // 0) Votel: PRIMARY lead destination (FDME client #1: WRP, 2026-10-18).
+    //    WRP site leads -> Votel pipeline -> mapped to Less Annoying CRM.
+    if (votelKey) {
+      try {
+        const names = name.split(/\s+/);
+        const r = await fetch('https://app.votel.ai/api/leads', {
+          method: 'POST',
+          headers: { 'X-API-Key': votelKey, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            first_name: names[0] || name,
+            last_name: names.slice(1).join(' ') || '',
+            phone: phone || null,
+            email: email || null,
+            source: 'windowsroofsplus.com',
+            notes: `${service}${city ? ' · ' + city : ''} — ${details}\npage: ${lead.page_url}\nsubmitted: ${lead.submitted_at}`,
+          }),
+        });
+        if (r.ok) {
+          delivered = true;
+          receipt.votel = true;
+          try { receipt.votel_lead = (await r.json())?.id || null; } catch (_) {}
+        } else {
+          console.error('votel write fail: status', r.status);
+        }
+      } catch (e) { console.error('votel write fail:', e?.message); }
+    }
 
     // 1) CRM write: supabase fb_leads (Friday pipeline reads this)
     if (sbUrl && sbKey) {
